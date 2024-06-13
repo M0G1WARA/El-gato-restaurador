@@ -1,3 +1,43 @@
-[gd_resource type="Theme" format=3 uid="uid://6f7iaf8vbdo4"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://6f7iaf8vbdo4"]
+
+[ext_resource type="FontFile" uid="uid://bdkkqmku58sqe" path="res://Fonts/Kenney Future Narrow.ttf" id="1_no4v4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthwh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj3mu"]
+bg_color = Color(0, 0.368627, 0.72549, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmlw2"]
+bg_color = Color(0, 0.498039, 0.960784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp85p"]
+bg_color = Color(0, 0.369564, 0.72482, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [resource]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_no4v4")
+Button/styles/focus = SubResource("StyleBoxFlat_kthwh")
+Button/styles/hover = SubResource("StyleBoxFlat_fj3mu")
+Button/styles/normal = SubResource("StyleBoxFlat_xmlw2")
+Button/styles/pressed = SubResource("StyleBoxFlat_mp85p")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/font_sizes/font_size = 96
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_no4v4")
+MarginContainer/constants/margin_bottom = 32
+MarginContainer/constants/margin_left = 32
+MarginContainer/constants/margin_right = 32
+MarginContainer/constants/margin_top = 32
+VBoxContainer/constants/separation = 32
