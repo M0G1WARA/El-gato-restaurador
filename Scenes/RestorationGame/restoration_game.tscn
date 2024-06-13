@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://xfp5fpgug3ml"]
+
+[ext_resource type="Texture2D" uid="uid://sgfklaqpanji" path="res://Assets/Images/Restoration/RockTexture.jpg" id="1_h5wgv"]
+
+[node name="RestorationGame" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+scale = Vector2(1.1, 1.1)
+size_flags_horizontal = 8
+texture = ExtResource("1_h5wgv")
