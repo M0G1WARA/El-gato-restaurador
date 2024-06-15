@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://6f7iaf8vbdo4"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://6f7iaf8vbdo4"]
 
 [ext_resource type="FontFile" uid="uid://bdkkqmku58sqe" path="res://Fonts/Kenney Future Narrow.ttf" id="1_no4v4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthwh"]
+bg_color = Color(0, 0.368627, 0.72549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj3mu"]
 bg_color = Color(0, 0.368627, 0.72549, 1)
@@ -25,6 +26,17 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfdxc"]
+bg_color = Color(0, 0.368627, 0.72549, 0.498039)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
 [resource]
 Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_no4v4")
@@ -40,4 +52,7 @@ MarginContainer/constants/margin_bottom = 32
 MarginContainer/constants/margin_left = 32
 MarginContainer/constants/margin_right = 32
 MarginContainer/constants/margin_top = 32
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_mfdxc")
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/normal_font = ExtResource("1_no4v4")
 VBoxContainer/constants/separation = 32
