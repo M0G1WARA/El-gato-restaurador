@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://x1m5njptkfoq"]
+
+[ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_4mhw4"]
+[ext_resource type="Texture2D" uid="uid://c03mmga1bcib5" path="res://icon.svg" id="1_pj0co"]
+[ext_resource type="Texture2D" uid="uid://cvqvp6vaxcqno" path="res://Assets/Images/Map/CityBackground.jpg" id="2_dr1yb"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4mhw4")
+
+[node name="City" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="City"]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_dr1yb")
+
+[node name="MarginContainer" type="MarginContainer" parent="City"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Store" type="TextureButton" parent="City/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("1_pj0co")
+
+[node name="MountainRange" type="TextureButton" parent="City/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_pj0co")
+
+[node name="MountainRange" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="MountainRange"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_dr1yb")
+
+[node name="MarginContainer" type="MarginContainer" parent="MountainRange"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CavePainting" type="TextureButton" parent="MountainRange/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_pj0co")
+
+[node name="Camp" type="TextureButton" parent="MountainRange/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("1_pj0co")
+
+[node name="City" type="TextureButton" parent="MountainRange/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("1_pj0co")
+
+[connection signal="pressed" from="City/MarginContainer/Store" to="." method="_on_store_pressed"]
+[connection signal="pressed" from="City/MarginContainer/MountainRange" to="." method="_on_mountain_range_pressed"]
+[connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
+[connection signal="pressed" from="MountainRange/MarginContainer/City" to="." method="_on_city_pressed"]
