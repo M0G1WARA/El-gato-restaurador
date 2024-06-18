@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://uy3fd4npftj0"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_y6vwc"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_y6vwc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HotBar" type="FlowContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+vertical = true
+
+[node name="Panel2" type="Panel" parent="MarginContainer/HotBar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/HotBar"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
