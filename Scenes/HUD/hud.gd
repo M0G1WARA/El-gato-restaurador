@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var slots = $MarginContainer/HotBar.get_children()
 @onready var slots_count = $MarginContainer/HotBar.get_child_count()
 
+signal returnMap
+
 var current_index: int:
 	set(value):
 		current_index = value
@@ -39,3 +41,11 @@ func on_hotbar_pressed(indexChild):
 	print("mouse_entered")
 	print("Se hizo clic en el hijo con índice:", indexChild)
 	current_index = indexChild
+
+
+func _on_return_pressed():
+	if(get_parent().get_parent().name == "Map"):
+		print("parent de map")
+		emit_signal("returnMap")
+	else:
+		print(get_parent().get_parent().name)

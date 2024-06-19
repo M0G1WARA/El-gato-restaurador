@@ -25,3 +25,30 @@ layout_mode = 2
 [node name="Panel" type="Panel" parent="MarginContainer/HotBar"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="LabelTime" type="Label" parent="MarginContainer/TimeContainer"]
+layout_mode = 2
+text = "Tiempo:"
+
+[node name="Time" type="Label" parent="MarginContainer/TimeContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="ButtonsContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="Finish" type="Button" parent="MarginContainer/ButtonsContainer"]
+layout_mode = 2
+text = "Finish"
+
+[node name="Return" type="Button" parent="MarginContainer/ButtonsContainer"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/Return" to="." method="_on_return_pressed"]
