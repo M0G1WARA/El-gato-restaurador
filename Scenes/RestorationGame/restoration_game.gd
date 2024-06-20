@@ -2,6 +2,8 @@ extends Node2D
 
 signal removeScene
 
+@export var PaintParticles2D: PackedScene
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,7 +27,11 @@ func _input(event):
 		remplaazar.append(Vector2i(clicked.x, clicked.y))
 		$TileMap.erase_cell(0,Vector2i(clicked.x, clicked.y))
 		$TileMap.set_cells_terrain_connect(0, remplaazar, 0, -1)
-
+		
+		var particle = PaintParticles2D.instantiate()
+		particle.position = event.position
+		particle.emitting = true
+		add_child(particle)
 
 func _on_hud_return_map():
 	emit_signal("removeScene")

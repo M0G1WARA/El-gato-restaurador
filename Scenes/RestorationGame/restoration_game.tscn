@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://xfp5fpgug3ml"]
+[gd_scene load_steps=6 format=3 uid="uid://xfp5fpgug3ml"]
 
 [ext_resource type="Texture2D" uid="uid://sgfklaqpanji" path="res://Assets/Images/Restoration/RockTexture.jpg" id="1_h5wgv"]
 [ext_resource type="Script" path="res://Scenes/RestorationGame/restoration_game.gd" id="1_tcarl"]
 [ext_resource type="PackedScene" uid="uid://cscv5d1e2muae" path="res://Scenes/TileMap/tile_map.tscn" id="2_ko263"]
+[ext_resource type="PackedScene" uid="uid://bqafd40mkkjsg" path="res://Particles/PaintParticles2D/paint_particles_2d.tscn" id="2_y33s5"]
 [ext_resource type="PackedScene" uid="uid://uy3fd4npftj0" path="res://Scenes/HUD/hud.tscn" id="4_4m87m"]
 
 [node name="RestorationGame" type="Node2D"]
 script = ExtResource("1_tcarl")
+PaintParticles2D = ExtResource("2_y33s5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 scale = Vector2(1.1, 1.1)
