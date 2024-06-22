@@ -20,7 +20,7 @@ func get_tile(mouse_pos):
 	return cell_pos
 
 func _input(event):
-	if event is InputEventMouseButton and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed() and not (event.is_action_pressed("ui_scroll_up") or event.is_action_pressed("ui_scroll_down")):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
