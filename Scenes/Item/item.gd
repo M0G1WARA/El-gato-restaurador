@@ -1,14 +1,21 @@
 extends Control
 
+var productIndex = 0
 
-func set_attributes(price:int,name:String,description:String):
+func set_attributes(index:int, price:int,name:String,description:String):
 	$VBoxContainer/BuyButton.text = "$ "+str(price)
 	$ItemDetails.set_attributes(name,description)
-
+	productIndex = index
 
 func _on_item_button_pressed():
 	$ItemDetails.showDetails()
 
 
 func _on_buy_button_pressed():
-	Global.backpack.append_array([0,0])
+	match productIndex:
+		0:
+			if 0 in Global.backpack:
+				var index = Global.backpack.find(0)
+				Global.backpack[index] = 1
+		1:
+			Global.backpack.append_array([0,0])
