@@ -1,15 +1,14 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func set_attributes(price:int,name:String,description:String):
+	$VBoxContainer/BuyButton.text = "$ "+str(price)
+	$ItemDetails.set_attributes(name,description)
 
 
 func _on_item_button_pressed():
 	$ItemDetails.showDetails()
+
+
+func _on_buy_button_pressed():
+	Global.backpack.append_array([0,0])
