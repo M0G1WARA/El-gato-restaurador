@@ -1,9 +1,12 @@
 extends CanvasLayer
 
-@onready var slots = $MarginContainer/HotBar.get_children()
-@onready var slots_count = $MarginContainer/HotBar.get_child_count()
+@onready var slots = 0#$MarginContainer/HotBar.get_children()
+@onready var slots_count = 0 #$MarginContainer/HotBar.get_child_count()
+var itemHotbar = preload("res://Scenes/ItemHotbar/item_hotbar.tscn")
 
 signal returnMap
+
+var items: Array[int] = [0,1]
 
 var current_index: int:
 	set(value):
@@ -13,6 +16,14 @@ var current_index: int:
 
 func _ready():
 	current_index = 0
+	for i in items:
+		var item = itemHotbar.instantiate()
+		item.set_attributes(i)
+		$MarginContainer/HotBar.add_child(item)
+	
+	slots = $MarginContainer/HotBar.get_children()
+	slots_count = $MarginContainer/HotBar.get_child_count()
+
 	for child in $MarginContainer/HotBar.get_children():
 		child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
 

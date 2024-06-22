@@ -19,9 +19,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 vertical = true
 
-[node name="ItemHotbar2" parent="MarginContainer/HotBar" instance=ExtResource("2_q8sve")]
-layout_mode = 2
-
 [node name="ItemHotbar" parent="MarginContainer/HotBar" instance=ExtResource("2_q8sve")]
 layout_mode = 2
 
