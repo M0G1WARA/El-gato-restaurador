@@ -5,6 +5,7 @@ extends CanvasLayer
 var itemHotbar = preload("res://Scenes/ItemHotbar/item_hotbar.tscn")
 
 signal returnMap
+signal updateUses
 
 var items: Array[int] = Global.backpack
 
@@ -63,3 +64,7 @@ func _on_return_pressed():
 		emit_signal("returnMap")
 	else:
 		print(get_parent().get_parent().name)
+
+
+func _on_update_uses():
+	$MarginContainer/HotBar.get_child(current_index).updateUses()

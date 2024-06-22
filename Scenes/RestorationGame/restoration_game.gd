@@ -24,6 +24,8 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
+		$HUD.emit_signal("updateUses")
+		
 		var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
 		
 		remplaazar.append(Vector2i(clicked.x, clicked.y))
