@@ -24,9 +24,11 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
+		var layer = Global.products[Global.item_selected]["layer"]
+		
 		remplaazar.append(Vector2i(clicked.x, clicked.y))
-		$TileMap.erase_cell(0,Vector2i(clicked.x, clicked.y))
-		$TileMap.set_cells_terrain_connect(0, remplaazar, 0, -1)
+		$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
+		$TileMap.set_cells_terrain_connect(layer, remplaazar, 0, -1)
 		
 		var particle = PaintParticles2D.instantiate()
 		particle.position = event.position

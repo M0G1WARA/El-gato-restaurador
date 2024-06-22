@@ -46,10 +46,10 @@ func reset_focus():
 
 func set_focus():
 	$MarginContainer/HotBar.get_child(current_index).modulate = Color(0,1,0)
+	Global.item_selected = current_index
 
 
 func on_hotbar_pressed(indexChild):
-	print("mouse_entered")
 	print("Se hizo clic en el hijo con índice:", indexChild)
 	current_index = indexChild
 
