@@ -6,7 +6,7 @@ var itemHotbar = preload("res://Scenes/ItemHotbar/item_hotbar.tscn")
 
 signal returnMap
 
-var items: Array[int] = [0,1]
+var items: Array[int] = Global.items
 
 var current_index: int:
 	set(value):

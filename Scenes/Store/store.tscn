@@ -32,15 +32,19 @@ layout_mode = 2
 size_flags_horizontal = 8
 
 [node name="Item" parent="MarginContainer/FlowContainer" instance=ExtResource("1_xp7jq")]
+visible = false
 layout_mode = 2
 
 [node name="Item2" parent="MarginContainer/FlowContainer" instance=ExtResource("1_xp7jq")]
+visible = false
 layout_mode = 2
 
 [node name="Item3" parent="MarginContainer/FlowContainer" instance=ExtResource("1_xp7jq")]
+visible = false
 layout_mode = 2
 
 [node name="Item4" parent="MarginContainer/FlowContainer" instance=ExtResource("1_xp7jq")]
+visible = false
 layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
