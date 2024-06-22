@@ -14,8 +14,9 @@ func _on_item_button_pressed():
 func _on_buy_button_pressed():
 	match productIndex:
 		0:
+			Global.backpack.append_array([0,0])
+		1:
 			if 0 in Global.backpack:
 				var index = Global.backpack.find(0)
 				Global.backpack[index] = 1
-		1:
-			Global.backpack.append_array([0,0])
+		

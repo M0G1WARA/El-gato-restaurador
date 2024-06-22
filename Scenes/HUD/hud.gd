@@ -45,8 +45,9 @@ func reset_focus():
 		slot.modulate = Color("ffffff")
 
 func set_focus():
-	$MarginContainer/HotBar.get_child(current_index).modulate = Color(0,1,0)
-	Global.item_selected = current_index
+	if slots_count>0:
+		$MarginContainer/HotBar.get_child(current_index).modulate = Color(0,1,0)
+		Global.item_selected = current_index
 
 
 func on_hotbar_pressed(indexChild):

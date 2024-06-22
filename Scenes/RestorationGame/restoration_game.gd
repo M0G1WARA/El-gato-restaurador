@@ -24,7 +24,7 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
-		var layer = Global.products[Global.item_selected]["layer"]
+		var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
 		
 		remplaazar.append(Vector2i(clicked.x, clicked.y))
 		$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
