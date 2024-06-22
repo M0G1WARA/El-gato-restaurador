@@ -2,10 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bdkkqmku58sqe" path="res://Fonts/Kenney Future Narrow.ttf" id="1_no4v4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthwh"]
-bg_color = Color(0, 0.368627, 0.72549, 1)
-expand_margin_left = 8.0
-expand_margin_right = 8.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_idx4i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj3mu"]
 bg_color = Color(0, 0.368627, 0.72549, 1)
@@ -23,7 +20,6 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_left = 8.0
-expand_margin_top = 8.0
 expand_margin_right = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp85p"]
@@ -33,7 +29,9 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 expand_margin_left = 8.0
+expand_margin_top = 8.0
 expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfdxc"]
 bg_color = Color(0, 0.368627, 0.72549, 0.498039)
@@ -49,7 +47,7 @@ expand_margin_bottom = 16.0
 [resource]
 Button/font_sizes/font_size = 48
 Button/fonts/font = ExtResource("1_no4v4")
-Button/styles/focus = SubResource("StyleBoxFlat_kthwh")
+Button/styles/focus = SubResource("StyleBoxEmpty_idx4i")
 Button/styles/hover = SubResource("StyleBoxFlat_fj3mu")
 Button/styles/normal = SubResource("StyleBoxFlat_xmlw2")
 Button/styles/pressed = SubResource("StyleBoxFlat_mp85p")

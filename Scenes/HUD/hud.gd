@@ -14,7 +14,7 @@ var current_index: int:
 func _ready():
 	current_index = 0
 	for child in $MarginContainer/HotBar.get_children():
-		child.connect("mouse_entered", on_hotbar_pressed.bind(child.get_index()))
+		child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
 
 func _input(event):
 	if event.is_action_pressed("ui_scroll_up"):

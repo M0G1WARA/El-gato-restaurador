@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://uy3fd4npftj0"]
+[gd_scene load_steps=3 format=3 uid="uid://uy3fd4npftj0"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_y6vwc"]
+[ext_resource type="PackedScene" uid="uid://dilkdtuex6opt" path="res://Scenes/ItemHotbar/item_hotbar.tscn" id="2_q8sve"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_y6vwc")
@@ -18,12 +19,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 vertical = true
 
-[node name="Panel2" type="Panel" parent="MarginContainer/HotBar"]
-custom_minimum_size = Vector2(80, 80)
+[node name="ItemHotbar2" parent="MarginContainer/HotBar" instance=ExtResource("2_q8sve")]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer/HotBar"]
-custom_minimum_size = Vector2(80, 80)
+[node name="ItemHotbar" parent="MarginContainer/HotBar" instance=ExtResource("2_q8sve")]
 layout_mode = 2
 
 [node name="TimeContainer" type="HBoxContainer" parent="MarginContainer"]
