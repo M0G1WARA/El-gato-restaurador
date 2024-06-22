@@ -18,4 +18,8 @@ func _on_item_selected():
 	print("item seleccionado")
 
 func updateUses():
-	$VBoxContainer/ProgressBar.value -= 1
+	if $VBoxContainer/ProgressBar.value > 1:
+		$VBoxContainer/ProgressBar.value -= 1
+	else:
+		Global.backpack[Global.item_selected] = 0
+		set_attributes()
