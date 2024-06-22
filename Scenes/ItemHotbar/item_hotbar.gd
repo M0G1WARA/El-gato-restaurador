@@ -5,9 +5,9 @@ signal item_selected
 func set_attributes(valor: int = 0):
 	match valor:
 		0:
-			print("cero")
+			$VBoxContainer.hide()
 		1:
-			print("item")
+			pass
 
 func _on_select_button_pressed():
 	emit_signal("item_selected")

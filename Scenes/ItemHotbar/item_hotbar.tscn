@@ -6,6 +6,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5evuv"]
 
 [node name="ItemHotbar" type="PanelContainer"]
+custom_minimum_size = Vector2(120, 180)
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
