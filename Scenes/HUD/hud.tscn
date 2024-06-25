@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://uy3fd4npftj0"]
+[gd_scene load_steps=3 format=3 uid="uid://uy3fd4npftj0"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_y6vwc"]
+[ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="2_2uro3"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_y6vwc")
@@ -12,11 +13,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HotBar" type="FlowContainer" parent="MarginContainer"]
+[node name="Hotbar" parent="MarginContainer" instance=ExtResource("2_2uro3")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-vertical = true
 
 [node name="TimeContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -43,5 +41,4 @@ text = "Finish"
 layout_mode = 2
 text = "Return"
 
-[connection signal="updateUses" from="." to="." method="_on_update_uses"]
 [connection signal="pressed" from="MarginContainer/ButtonsContainer/Return" to="." method="_on_return_pressed"]

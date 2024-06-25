@@ -24,7 +24,7 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
-		$HUD.emit_signal("updateUses")
+		$HUD/MarginContainer/Hotbar.emit_signal("updateUses")
 		
 		var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
 		

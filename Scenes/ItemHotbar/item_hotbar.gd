@@ -3,12 +3,11 @@ extends PanelContainer
 signal item_selected
 
 func set_attributes(valor: int = 0):
-	match valor:
-		0:
-			$VBoxContainer.hide()
-		1:
-			$VBoxContainer/ProgressBar.max_value = Global.products[Global.backpack[Global.item_selected]]["uses"]
-			$VBoxContainer/ProgressBar.value =  Global.products[Global.backpack[Global.item_selected]]["uses"]
+	if(valor!=0):
+			$VBoxContainer/ProgressBar.max_value = Global.products[Global.backpack[valor]]["uses"]
+			$VBoxContainer/ProgressBar.value =  Global.products[Global.backpack[valor]]["uses"]
+	else:
+		$VBoxContainer.hide()
 
 func _on_select_button_pressed():
 	emit_signal("item_selected")
