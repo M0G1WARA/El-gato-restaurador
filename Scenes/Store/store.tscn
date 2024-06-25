@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcoedde7t4lno"]
+[gd_scene load_steps=3 format=3 uid="uid://dcoedde7t4lno"]
 
 [ext_resource type="Script" path="res://Scenes/Store/store.gd" id="1_plk2y"]
+[ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="2_jjxyi"]
 
 [node name="Store" type="Control"]
 layout_mode = 3
@@ -29,5 +30,8 @@ text = "Back"
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+
+[node name="Hotbar" parent="MarginContainer" instance=ExtResource("2_jjxyi")]
+layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

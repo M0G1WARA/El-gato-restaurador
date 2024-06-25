@@ -2,6 +2,8 @@ extends Control
 
 var productIndex = 0
 
+signal buy_item
+
 func set_attributes(index:int, price:int,name:String,description:String):
 	$VBoxContainer/BuyButton.text = "$ "+str(price)
 	$ItemDetails.set_attributes(name,description)
@@ -12,6 +14,7 @@ func _on_item_button_pressed():
 
 
 func _on_buy_button_pressed():
+	emit_signal("buy_item")
 	match productIndex:
 		0:
 			Global.backpack.append_array([0,0])

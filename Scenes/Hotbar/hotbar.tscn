@@ -10,4 +10,5 @@ size_flags_vertical = 8
 vertical = true
 script = ExtResource("1_pifp8")
 
+[connection signal="refresh" from="." to="." method="_on_refresh"]
 [connection signal="updateUses" from="." to="." method="_on_update_uses"]

@@ -4,8 +4,8 @@ signal item_selected
 
 func set_attributes(valor: int = 0):
 	if(valor!=0):
-			$VBoxContainer/ProgressBar.max_value = Global.products[Global.backpack[valor]]["uses"]
-			$VBoxContainer/ProgressBar.value =  Global.products[Global.backpack[valor]]["uses"]
+			$VBoxContainer/ProgressBar.max_value = Global.products[valor]["uses"]
+			$VBoxContainer/ProgressBar.value =  Global.products[valor]["uses"]
 	else:
 		$VBoxContainer.hide()
 

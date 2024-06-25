@@ -11,6 +11,7 @@ var current_index: int:
 		set_focus()
 
 signal updateUses
+signal refresh
 
 func _ready():
 	
@@ -56,5 +57,10 @@ func on_hotbar_pressed(indexChild):
 
 
 func _on_update_uses():
-	print('waaaaaaaaaaaaa')
 	get_child(current_index).updateUses()
+
+
+func _on_refresh():
+	var item = itemHotbar.instantiate()
+	item.set_attributes(0)
+	add_child(item)
