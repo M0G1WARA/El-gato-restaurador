@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://xfp5fpgug3ml"]
+[gd_scene load_steps=8 format=3 uid="uid://xfp5fpgug3ml"]
 
 [ext_resource type="Texture2D" uid="uid://sgfklaqpanji" path="res://Assets/Images/Restoration/RockTexture.jpg" id="1_h5wgv"]
 [ext_resource type="Script" path="res://Scenes/RestorationGame/restoration_game.gd" id="1_tcarl"]
 [ext_resource type="PackedScene" uid="uid://cscv5d1e2muae" path="res://Scenes/TileMap/tile_map.tscn" id="2_ko263"]
 [ext_resource type="PackedScene" uid="uid://bqafd40mkkjsg" path="res://Particles/PaintParticles2D/paint_particles_2d.tscn" id="2_y33s5"]
 [ext_resource type="PackedScene" uid="uid://uy3fd4npftj0" path="res://Scenes/HUD/hud.tscn" id="4_4m87m"]
+
+[sub_resource type="Gradient" id="Gradient_ia317"]
+offsets = PackedFloat32Array(0.0917431, 0.509174)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nuev2"]
+gradient = SubResource("Gradient_ia317")
+width = 896
+height = 640
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1.3, 0)
 
 [node name="RestorationGame" type="Node2D"]
 script = ExtResource("1_tcarl")
@@ -21,4 +33,14 @@ layer_0/tile_data = PackedInt32Array(196612, 65538, 0, 262148, 65538, 1, 327684,
 
 [node name="HUD" parent="." instance=ExtResource("4_4m87m")]
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(666, 397)
+texture = SubResource("GradientTexture2D_nuev2")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="returnMap" from="HUD" to="." method="_on_hud_return_map"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
