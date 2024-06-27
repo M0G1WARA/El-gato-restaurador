@@ -39,8 +39,3 @@ func _input(event):
 
 func _on_hud_return_map():
 	emit_signal("removeScene")
-
-var valor = 1
-func _on_timer_timeout():
-	valor -= 0.126
-	$CanvasModulate.color = Color(valor, valor, valor)

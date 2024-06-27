@@ -26,3 +26,28 @@ func _on_cave_painting_pressed():
 	
 func _on_mi_signal():
 		remove_child(instance)
+
+var currentTimeHour = 12
+var currentTimeMinutes = 0
+var IntensityLevel = 1
+func _on_timer_timeout():
+	print("hour: ",currentTimeHour," minutes: ", currentTimeMinutes, " CanvasModulate ", IntensityLevel )
+	if currentTimeMinutes <50:
+		currentTimeMinutes+=60
+	else:
+		currentTimeMinutes=0
+		update_canvas()
+	
+
+func update_canvas():
+	if currentTimeHour <23:
+		currentTimeHour+=1
+	else:
+		currentTimeHour = 0
+	
+	if currentTimeHour > 18 and IntensityLevel > 0.2 and currentTimeHour < 23:
+		IntensityLevel -= 0.2#0.126
+		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)
+	elif currentTimeHour > 1 and IntensityLevel >= 0.2 and currentTimeHour < 6:
+		IntensityLevel += 0.2
+		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)

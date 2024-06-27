@@ -34,13 +34,8 @@ layer_0/tile_data = PackedInt32Array(196612, 65538, 0, 262148, 65538, 1, 327684,
 [node name="HUD" parent="." instance=ExtResource("4_4m87m")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(666, 397)
 texture = SubResource("GradientTexture2D_nuev2")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [connection signal="returnMap" from="HUD" to="." method="_on_hud_return_map"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

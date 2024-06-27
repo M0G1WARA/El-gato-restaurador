@@ -93,7 +93,13 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("1_pj0co")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="City/MarginContainer/Store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="City/MarginContainer/MountainRange" to="." method="_on_mountain_range_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/City" to="." method="_on_city_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
