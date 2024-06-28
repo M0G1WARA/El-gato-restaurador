@@ -45,9 +45,9 @@ func update_canvas():
 	else:
 		currentTimeHour = 0
 	
-	if currentTimeHour > 18 and IntensityLevel > 0.2 and currentTimeHour < 23:
-		IntensityLevel -= 0.2#0.126
+	if currentTimeHour >= 18 and currentTimeHour <= 23:
+		IntensityLevel -= 0.15#0.126
 		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)
-	elif currentTimeHour > 1 and IntensityLevel >= 0.2 and currentTimeHour < 6:
-		IntensityLevel += 0.2
+	elif currentTimeHour >= 1 and currentTimeHour <= 6:
+		IntensityLevel += 0.15
 		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)
