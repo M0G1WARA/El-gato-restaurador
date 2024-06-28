@@ -6,7 +6,10 @@ signal removeScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var size = Vector2i(3,4)
+	var pattern = $TileMap.tile_set.get_pattern(1)
+	($TileMap as TileMap).set_layer_modulate(0,Color(0.12, 0.12, 0.12, 0.5))
+	$TileMap.set_pattern(0, Vector2i(1,1), pattern)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

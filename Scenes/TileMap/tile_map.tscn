@@ -1,6 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cscv5d1e2muae"]
+[gd_scene load_steps=6 format=3 uid="uid://cscv5d1e2muae"]
 
 [ext_resource type="Texture2D" uid="uid://c2pe5li5nmoue" path="res://Assets/Images/Restoration/TilesPintura.png" id="1_4qfjb"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_h16cg"]
+tile_data = PackedInt32Array(65536, 65538, 0, 131072, 65538, 1, 196608, 65538, 2, 65537, 131074, 0, 131073, 131074, 1, 196609, 131074, 1, 262145, 65538, 2, 2, 2, 0, 65538, 131074, 1, 131074, 131074, 1, 196610, 131074, 1, 262146, 196610, 2, 65539, 196610, 0, 131075, 196610, 1, 196611, 196610, 2, 131079, 65538, 0, 196615, 65538, 2, 131080, 196610, 0, 196616, 196610, 1, 262152, 65538, 2, 262153, 131074, 0, 327689, 65538, 2, 262154, 131074, 0, 327690, 131074, 2, 262155, 196610, 0, 327691, 196610, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_5etdu"]
+tile_data = PackedInt32Array(0, 65538, 0, 65536, 65538, 1, 131072, 65538, 1, 196608, 65538, 1, 262144, 65538, 2, 1, 131074, 0, 65537, 131074, 1, 131073, 131074, 1, 196609, 131074, 1, 262145, 131074, 2, 2, 131074, 0, 65538, 131074, 1, 131074, 131074, 1, 196610, 131074, 1, 262146, 131074, 2, 3, 131074, 0, 65539, 131074, 1, 131075, 131074, 1, 196611, 131074, 1, 262147, 131074, 2, 4, 131074, 0, 65540, 131074, 1, 131076, 131074, 1, 196612, 131074, 1, 262148, 131074, 2, 5, 131074, 0, 65541, 131074, 1, 131077, 131074, 1, 196613, 131074, 1, 262149, 131074, 2, 6, 131074, 0, 65542, 131074, 1, 131078, 131074, 1, 196614, 131074, 1, 262150, 131074, 2, 7, 131074, 0, 65543, 131074, 1, 131079, 131074, 1, 196615, 131074, 1, 262151, 131074, 2, 8, 131074, 0, 65544, 131074, 1, 131080, 131074, 1, 196616, 131074, 1, 262152, 131074, 2, 9, 196610, 0, 65545, 196610, 1, 131081, 196610, 1, 196617, 196610, 1, 262153, 196610, 2)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oofc5"]
 texture = ExtResource("1_4qfjb")
@@ -108,6 +114,8 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 1, 1)
 sources/2 = SubResource("TileSetAtlasSource_oofc5")
+pattern_0 = SubResource("TileMapPattern_h16cg")
+pattern_1 = SubResource("TileMapPattern_5etdu")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_kjty3")
