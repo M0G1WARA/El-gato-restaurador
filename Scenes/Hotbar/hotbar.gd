@@ -68,6 +68,8 @@ func refresh(indexProduct):
 				add_child(item)
 			slots = get_children()
 			slots_count = get_child_count()
+			for child in get_children():
+				child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
 		1:
 			if items.size() < 5:
 				for n in 3:
@@ -76,6 +78,8 @@ func refresh(indexProduct):
 					add_child(item)
 			slots = get_children()
 			slots_count = get_child_count()
+			for child in get_children():
+				child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
 		2,3,4,5,6:
 			if 0 in items:
 				var index = items.find(0)
