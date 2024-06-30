@@ -1,11 +1,13 @@
 extends Control
 
 var scene = load("res://Scenes/RestorationGame/restoration_game.tscn")
-#var scene = preload("res://Scenes/RestorationGame/restoration_game.tscn")
-var instance = scene.instantiate()
+var store = load("res://Scenes/Store/store.tscn")
+var RestorationInstance = scene.instantiate()
+var storeInstance = store.instantiate()
 
 func _ready():
-	instance.connect("removeScene", _on_mi_signal)
+	RestorationInstance.connect("removeScene", _on_mi_signal.bind(RestorationInstance))
+	storeInstance.connect("removeScene", _on_mi_signal.bind(storeInstance))
 
 func _on_mountain_range_pressed():
 	Transition.show_transition()
@@ -18,13 +20,14 @@ func _on_city_pressed():
 	$MountainRange.hide()
 
 func _on_store_pressed():
-	Transition.transition_scene("res://Scenes/Store/store.tscn")
+	#Transition.transition_scene("res://Scenes/Store/store.tscn")
+	add_child(storeInstance)
 
 func _on_cave_painting_pressed():
 	#Transition.transition_scene("res://Scenes/RestorationGame/restoration_game.tscn")
-	add_child(instance)
+	add_child(RestorationInstance)
 	
-func _on_mi_signal():
+func _on_mi_signal(instance):
 		remove_child(instance)
 
 var currentTimeHour = 12

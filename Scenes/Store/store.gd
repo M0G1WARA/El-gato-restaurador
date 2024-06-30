@@ -1,6 +1,7 @@
 extends Control
 
 var product = preload("res://Scenes/Item/item.tscn")
+signal removeScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +16,7 @@ func _ready():
 		child.connect("buy_item", on_buy_item_pressed.bind(child.get_index()))
 
 func _on_back_button_pressed():
-	Transition.transition_scene("res://Scenes/Map/map.tscn")
+	emit_signal("removeScene")
 
 func on_buy_item_pressed(indexProduct):
 	print("Se hizo clic en producto:", indexProduct)
