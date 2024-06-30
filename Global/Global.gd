@@ -18,3 +18,6 @@ var products: Array[Dictionary]= backpacks + items
 var backpack: Array[int] = [2]
 
 var item_selected: int = -1
+
+var record_days: int = 0
+var record_hours: int = 0

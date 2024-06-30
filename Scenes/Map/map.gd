@@ -56,7 +56,9 @@ func _on_timer_timeout():
 func update_canvas():
 	if currentTimeHour <23:
 		currentTimeHour+=1
+		Global.record_hours +=1
 	else:
+		Global.record_days +=1
 		currentTimeHour = 0
 	
 	$HUD/TimeContainer/HourLabel.text =  '00' if (currentTimeHour==0) else str(currentTimeHour)
