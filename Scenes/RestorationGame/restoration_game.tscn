@@ -31,7 +31,6 @@ texture = ExtResource("1_h5wgv")
 layer_0/modulate = Color(0.12223, 0.243806, 0.364227, 1)
 
 [node name="HUD" parent="." instance=ExtResource("4_4m87m")]
-visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
