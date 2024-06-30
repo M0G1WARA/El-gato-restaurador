@@ -19,4 +19,4 @@ func _on_back_button_pressed():
 
 func on_buy_item_pressed(indexProduct):
 	print("Se hizo clic en producto:", indexProduct)
-	$MarginContainer/Hotbar.emit_signal("refresh")
+	$MarginContainer/Hotbar.refresh(indexProduct)

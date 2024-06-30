@@ -3,9 +3,11 @@ extends PanelContainer
 signal item_selected
 
 func set_attributes(valor: int = 0):
-	if(valor!=0):
-			$VBoxContainer/ProgressBar.max_value = Global.products[valor]["uses"]
-			$VBoxContainer/ProgressBar.value =  Global.products[valor]["uses"]
+	if(valor!=0 and valor!=1):
+		$VBoxContainer.show()
+		$VBoxContainer/TextureRect/Sprite2D.frame = valor
+		$VBoxContainer/ProgressBar.max_value = Global.products[valor]["uses"]
+		$VBoxContainer/ProgressBar.value =  Global.products[valor]["uses"]
 	else:
 		$VBoxContainer.hide()
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dilkdtuex6opt"]
 
-[ext_resource type="Texture2D" uid="uid://c03mmga1bcib5" path="res://icon.svg" id="1_012t6"]
 [ext_resource type="Script" path="res://Scenes/ItemHotbar/item_hotbar.gd" id="1_ixxgn"]
+[ext_resource type="Texture2D" uid="uid://pa8pucy8xgfh" path="res://Assets/Images/Map/Store/inventory_item.png" id="2_1a5r1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5evuv"]
 
@@ -16,8 +16,15 @@ script = ExtResource("1_ixxgn")
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-texture = ExtResource("1_012t6")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/TextureRect"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_1a5r1")
+centered = false
+hframes = 4
+vframes = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 24)

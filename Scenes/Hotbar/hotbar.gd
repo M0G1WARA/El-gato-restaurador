@@ -11,7 +11,6 @@ var current_index: int:
 		set_focus()
 
 signal updateUses
-signal refresh
 
 func _ready():
 	
@@ -60,7 +59,20 @@ func _on_update_uses():
 	get_child(current_index).updateUses()
 
 
-func _on_refresh():
-	var item = itemHotbar.instantiate()
-	item.set_attributes(0)
-	add_child(item)
+func refresh(indexProduct):
+	match indexProduct:
+		0:
+			if items.size() < 5:
+				var item = itemHotbar.instantiate()
+				item.set_attributes(indexProduct)
+				add_child(item)
+		1:
+			if items.size() < 5:
+				for n in 3:
+					var item = itemHotbar.instantiate()
+					item.set_attributes(indexProduct)
+					add_child(item)
+		2,3:
+			if 0 in items:
+				var index = items.find(0)
+				get_child(index).set_attributes(indexProduct)

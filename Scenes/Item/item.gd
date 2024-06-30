@@ -18,9 +18,15 @@ func _on_buy_button_pressed():
 	emit_signal("buy_item")
 	match productIndex:
 		0:
-			Global.backpack.append_array([0,0])
+			if Global.backpack.size() < 5:
+				Global.backpack.append_array([0])
+				$VBoxContainer/BuyButton.disabled = true
 		1:
+			if Global.backpack.size() < 5:
+				Global.backpack.append_array([0,0,0])
+				$VBoxContainer/BuyButton.disabled = true
+		2,3:
 			if 0 in Global.backpack:
 				var index = Global.backpack.find(0)
-				Global.backpack[index] = 1
+				Global.backpack[index] = productIndex
 		
