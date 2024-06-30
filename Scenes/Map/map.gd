@@ -75,3 +75,15 @@ func update_canvas():
 
 func refresh_hotbar(item):
 	$Hotbar.refresh(item)
+
+
+func _on_tent_pressed():
+	var tmpTime = 0
+	if currentTimeHour >= 20 or (currentTimeHour>=0 and currentTimeHour<6):
+		tmpTime = 30-currentTimeHour if currentTimeHour>= 20 else 6-currentTimeHour
+		print('waaa')
+		for n in tmpTime:
+			print('timeout ',n)
+			update_canvas()
+	else:
+		print('no puedes dormir')
