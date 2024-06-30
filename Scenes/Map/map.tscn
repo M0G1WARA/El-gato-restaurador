@@ -140,6 +140,26 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="HUD" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="TimeContainer" type="HBoxContainer" parent="HUD"]
+layout_mode = 2
+
+[node name="HourLabel" type="Label" parent="HUD/TimeContainer"]
+layout_mode = 2
+text = "00"
+
+[node name="ColonLabel" type="Label" parent="HUD/TimeContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="MinutesLabel" type="Label" parent="HUD/TimeContainer"]
+layout_mode = 2
+text = "00"
+
 [connection signal="pressed" from="City/MarginContainer/Store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="City/MarginContainer/MountainRange" to="." method="_on_mountain_range_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
