@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://x1m5njptkfoq"]
+[gd_scene load_steps=13 format=3 uid="uid://x1m5njptkfoq"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_4mhw4"]
 [ext_resource type="Texture2D" uid="uid://c03mmga1bcib5" path="res://icon.svg" id="1_pj0co"]
-[ext_resource type="Texture2D" uid="uid://cvqvp6vaxcqno" path="res://Assets/Images/Map/CityBackground.jpg" id="2_dr1yb"]
+[ext_resource type="Texture2D" uid="uid://b0cum21gx8ja0" path="res://Assets/Images/Map/CityBackground.png" id="2_43f48"]
+[ext_resource type="Texture2D" uid="uid://btknwp7tqq85q" path="res://Assets/Images/Map/MountainRange.png" id="3_ddilb"]
 [ext_resource type="Texture2D" uid="uid://b7s7tiov5nd0" path="res://Assets/Images/Map/Store/store_open.png" id="3_mu0dw"]
 [ext_resource type="Texture2D" uid="uid://colrg1jjdp8at" path="res://Assets/Images/Map/Store/store_close.png" id="4_2uuya"]
 [ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="4_s1lop"]
 [ext_resource type="Texture2D" uid="uid://ct8klu0ljfr8y" path="res://Assets/Images/Map/tent.png" id="6_q833l"]
+[ext_resource type="Texture2D" uid="uid://dtunjo8u6cloy" path="res://Assets/Images/Map/SanFranciscoBackground.jpg" id="6_rgj3f"]
 [ext_resource type="PackedScene" uid="uid://bkx2a1r3vegdk" path="res://Scenes/Finish/finish.tscn" id="8_bd6sp"]
 
 [sub_resource type="Gradient" id="Gradient_slbhv"]
@@ -38,7 +40,7 @@ layout_mode = 1
 offset_right = 1280.0
 offset_bottom = 720.0
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("2_dr1yb")
+texture = ExtResource("2_43f48")
 
 [node name="MarginContainer" type="MarginContainer" parent="City"]
 layout_mode = 1
@@ -48,18 +50,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MarginContainer2" type="MarginContainer" parent="City/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 120
+
+[node name="MountainRange" type="TextureButton" parent="City/MarginContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("3_ddilb")
+
 [node name="Store" type="TextureButton" parent="City/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("3_mu0dw")
 texture_disabled = ExtResource("4_2uuya")
-
-[node name="MountainRange" type="TextureButton" parent="City/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("1_pj0co")
 
 [node name="PointLight2D" type="PointLight2D" parent="City/MarginContainer"]
 visible = false
@@ -82,7 +90,7 @@ layout_mode = 1
 offset_right = 1280.0
 offset_bottom = 720.0
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("2_dr1yb")
+texture = ExtResource("6_rgj3f")
 
 [node name="MarginContainer" type="MarginContainer" parent="MountainRange"]
 layout_mode = 1
@@ -169,8 +177,8 @@ text = "Finish"
 [node name="Finish" parent="." instance=ExtResource("8_bd6sp")]
 visible = false
 
+[connection signal="pressed" from="City/MarginContainer/MarginContainer2/MountainRange" to="." method="_on_mountain_range_pressed"]
 [connection signal="pressed" from="City/MarginContainer/Store" to="." method="_on_store_pressed"]
-[connection signal="pressed" from="City/MarginContainer/MountainRange" to="." method="_on_mountain_range_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/Tent" to="." method="_on_tent_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/City" to="." method="_on_city_pressed"]

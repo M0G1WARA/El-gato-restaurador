@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvqvp6vaxcqno"
-path="res://.godot/imported/CityBackground.jpg-98e9a27106c5b4b5bed62478a60158d9.ctex"
+uid="uid://dtunjo8u6cloy"
+path="res://.godot/imported/SanFranciscoBackground.jpg-83be4e1e440df993d5c011a0e9f8e26b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Map/CityBackground.jpg"
-dest_files=["res://.godot/imported/CityBackground.jpg-98e9a27106c5b4b5bed62478a60158d9.ctex"]
+source_file="res://Assets/Images/Map/SanFranciscoBackground.jpg"
+dest_files=["res://.godot/imported/SanFranciscoBackground.jpg-83be4e1e440df993d5c011a0e9f8e26b.ctex"]
 
 [params]
 
