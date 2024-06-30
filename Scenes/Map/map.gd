@@ -54,9 +54,14 @@ func update_canvas():
 	if currentTimeHour >= 18 and currentTimeHour <= 23:
 		IntensityLevel -= 0.15#0.126
 		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)
+		$City/MarginContainer/Store.disabled = true
+		$City/MarginContainer/PointLight2D.visible = true
 	elif currentTimeHour >= 1 and currentTimeHour <= 6:
 		IntensityLevel += 0.15
 		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)
+	elif currentTimeHour >= 8 and currentTimeHour < 18:
+		$City/MarginContainer/Store.disabled = false
+		$City/MarginContainer/PointLight2D.visible = false
 
 func refresh_hotbar(item):
 	$Hotbar.refresh(item)
