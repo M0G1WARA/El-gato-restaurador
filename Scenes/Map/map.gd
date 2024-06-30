@@ -21,14 +21,17 @@ func _on_city_pressed():
 
 func _on_store_pressed():
 	#Transition.transition_scene("res://Scenes/Store/store.tscn")
-	add_child(storeInstance)
+	$Instances.add_child(storeInstance)
+	$Hotbar.show()
 
 func _on_cave_painting_pressed():
 	#Transition.transition_scene("res://Scenes/RestorationGame/restoration_game.tscn")
-	add_child(RestorationInstance)
+	$Instances.add_child(RestorationInstance)
+	$Hotbar.show()
 	
 func _on_mi_signal(instance):
-		remove_child(instance)
+		$Instances.remove_child(instance)
+		$Hotbar.hide()
 
 var currentTimeHour = 12
 var currentTimeMinutes = 0
@@ -54,3 +57,6 @@ func update_canvas():
 	elif currentTimeHour >= 1 and currentTimeHour <= 6:
 		IntensityLevel += 0.15
 		$CanvasModulate.color = Color(IntensityLevel, IntensityLevel, IntensityLevel)
+
+func refresh_hotbar(item):
+	$Hotbar.refresh(item)

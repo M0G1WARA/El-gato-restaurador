@@ -19,5 +19,4 @@ func _on_back_button_pressed():
 	emit_signal("removeScene")
 
 func on_buy_item_pressed(indexProduct):
-	print("Se hizo clic en producto:", indexProduct)
-	$MarginContainer/Hotbar.refresh(indexProduct)
+	get_parent().get_parent().refresh_hotbar(indexProduct)

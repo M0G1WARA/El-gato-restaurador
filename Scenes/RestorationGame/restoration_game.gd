@@ -32,7 +32,7 @@ func _input(event):
 		else:
 			$PointLight2D.hide()
 		
-		$HUD/MarginContainer/Hotbar.emit_signal("updateUses")
+		get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
 		
 		var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
 		

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://x1m5njptkfoq"]
+[gd_scene load_steps=5 format=3 uid="uid://x1m5njptkfoq"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_4mhw4"]
 [ext_resource type="Texture2D" uid="uid://c03mmga1bcib5" path="res://icon.svg" id="1_pj0co"]
 [ext_resource type="Texture2D" uid="uid://cvqvp6vaxcqno" path="res://Assets/Images/Map/CityBackground.jpg" id="2_dr1yb"]
+[ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="4_s1lop"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -97,6 +98,28 @@ texture_normal = ExtResource("1_pj0co")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Instances" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Hotbar" parent="." instance=ExtResource("4_s1lop")]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="pressed" from="City/MarginContainer/Store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="City/MarginContainer/MountainRange" to="." method="_on_mountain_range_pressed"]

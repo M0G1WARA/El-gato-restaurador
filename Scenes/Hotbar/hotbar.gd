@@ -66,12 +66,16 @@ func refresh(indexProduct):
 				var item = itemHotbar.instantiate()
 				item.set_attributes(indexProduct)
 				add_child(item)
+			slots = get_children()
+			slots_count = get_child_count()
 		1:
 			if items.size() < 5:
 				for n in 3:
 					var item = itemHotbar.instantiate()
 					item.set_attributes(indexProduct)
 					add_child(item)
+			slots = get_children()
+			slots_count = get_child_count()
 		2,3:
 			if 0 in items:
 				var index = items.find(0)

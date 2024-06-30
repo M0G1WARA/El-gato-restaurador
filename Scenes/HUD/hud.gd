@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_return_pressed():
-	if(get_parent().get_parent().name == "Map"):
+	if(get_parent().get_parent().get_parent().name == "Map"):
 		print("parent de map")
 		emit_signal("returnMap")
 	else:
