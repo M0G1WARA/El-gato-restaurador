@@ -76,7 +76,7 @@ func refresh(indexProduct):
 					add_child(item)
 			slots = get_children()
 			slots_count = get_child_count()
-		2,3:
+		2,3,4,5,6:
 			if 0 in items:
 				var index = items.find(0)
 				get_child(index).set_attributes(indexProduct)

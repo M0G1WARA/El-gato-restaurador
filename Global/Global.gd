@@ -8,6 +8,9 @@ var backpacks: Array[Dictionary] = [
 var items: Array[Dictionary]= [
 	{"price":120, "name" : "Disolvente y brocha", "description": "Te permite limpiar la pintura de las paredes", "layer":0, "uses":5},
 	{"price":80, "name" : "Linterna", "description": "Te permite ver en las noches", "layer":1,"uses":5},
+	{"price":180, "name" : "Tienda de campaña", "description": "Te permite dormir por las noches", "layer":1,"uses":5},
+	{"price":80, "name" : "Resanador de grietas", "description": "Te permite restaurar las grietas de la priedra", "layer":1,"uses":2},
+	{"price":80, "name" : "Pintura en aerosol", "description": "Algunas personas lo usan para dañar las pinturas rupestres", "layer":1,"uses":5},
 ]
 
 var products: Array[Dictionary]= backpacks + items

@@ -25,7 +25,7 @@ func _on_buy_button_pressed():
 			if Global.backpack.size() < 5:
 				Global.backpack.append_array([0,0,0])
 				$VBoxContainer/BuyButton.disabled = true
-		2,3:
+		2,3,4,5,6:
 			if 0 in Global.backpack:
 				var index = Global.backpack.find(0)
 				Global.backpack[index] = productIndex
