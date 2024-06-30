@@ -1,6 +1,6 @@
 extends Control
 
-var scene = load("res://Scenes/RestorationGame/restoration_game.tscn")
+var scene = preload("res://Scenes/RestorationGame/restoration_game.tscn")
 var store = load("res://Scenes/Store/store.tscn")
 var RestorationInstance = scene.instantiate()
 var storeInstance = store.instantiate()
@@ -87,3 +87,10 @@ func _on_tent_pressed():
 			update_canvas()
 	else:
 		print('no puedes dormir')
+
+
+func _on_button_pressed():
+	$Timer.stop()
+	$Finish.show()
+	print('score',RestorationInstance.get_score())
+	$Finish.load_score(RestorationInstance.get_score())

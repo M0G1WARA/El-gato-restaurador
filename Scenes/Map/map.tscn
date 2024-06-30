@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://x1m5njptkfoq"]
+[gd_scene load_steps=11 format=3 uid="uid://x1m5njptkfoq"]
 
 [ext_resource type="Script" path="res://Scenes/Map/map.gd" id="1_4mhw4"]
 [ext_resource type="Texture2D" uid="uid://c03mmga1bcib5" path="res://icon.svg" id="1_pj0co"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://colrg1jjdp8at" path="res://Assets/Images/Map/Store/store_close.png" id="4_2uuya"]
 [ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="4_s1lop"]
 [ext_resource type="Texture2D" uid="uid://ct8klu0ljfr8y" path="res://Assets/Images/Map/tent.png" id="6_q833l"]
+[ext_resource type="PackedScene" uid="uid://bkx2a1r3vegdk" path="res://Scenes/Finish/finish.tscn" id="8_bd6sp"]
 
 [sub_resource type="Gradient" id="Gradient_slbhv"]
 offsets = PackedFloat32Array(0, 0.408257, 1)
@@ -25,7 +26,6 @@ grow_vertical = 2
 script = ExtResource("1_4mhw4")
 
 [node name="City" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,6 +69,7 @@ scale = Vector2(3.158, 4)
 texture = SubResource("GradientTexture2D_01phe")
 
 [node name="MountainRange" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,9 +140,11 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="HUD" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 100.0
+grow_horizontal = 2
 
 [node name="TimeContainer" type="HBoxContainer" parent="HUD"]
 layout_mode = 2
@@ -158,9 +161,18 @@ text = ":"
 layout_mode = 2
 text = "00"
 
+[node name="Button" type="Button" parent="HUD"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Finish"
+
+[node name="Finish" parent="." instance=ExtResource("8_bd6sp")]
+visible = false
+
 [connection signal="pressed" from="City/MarginContainer/Store" to="." method="_on_store_pressed"]
 [connection signal="pressed" from="City/MarginContainer/MountainRange" to="." method="_on_mountain_range_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/Tent" to="." method="_on_tent_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/City" to="." method="_on_city_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]

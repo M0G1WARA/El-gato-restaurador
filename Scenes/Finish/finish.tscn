@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkx2a1r3vegdk"]
+
+[ext_resource type="Script" path="res://Scenes/Finish/finish.gd" id="1_qqv15"]
+
+[node name="Finish" type="CanvasLayer"]
+script = ExtResource("1_qqv15")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Score"
+horizontal_alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/TimeContainer"]
+layout_mode = 2
+text = "Tiempo"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/TimeContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+step = 1.0
+value = 50.0
+rounded = true
+
+[node name="PointsContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PointsContainer"]
+layout_mode = 2
+text = "Completado"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/PointsContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+step = 1.0
+rounded = true
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "OK"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
