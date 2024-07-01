@@ -59,11 +59,11 @@ text = "0"
 layout_mode = 2
 text = "Dias"
 
-[node name="HoursLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="Hours" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
 layout_mode = 2
 text = "0"
 
-[node name="Hours" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="HoursLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
 layout_mode = 2
 text = "Horas"
 
