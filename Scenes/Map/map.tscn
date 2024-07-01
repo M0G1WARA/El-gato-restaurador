@@ -168,6 +168,11 @@ text = ":"
 layout_mode = 2
 text = "00"
 
+[node name="Label" type="Label" parent="HUD/TimeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.92523e-07, 0.983666, 5.39064e-06, 1)
+text = "$0"
+
 [node name="Button" type="Button" parent="HUD"]
 layout_mode = 2
 size_flags_horizontal = 4

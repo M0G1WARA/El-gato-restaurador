@@ -60,27 +60,32 @@ func _on_update_uses():
 
 
 func refresh(indexProduct):
-	match indexProduct:
-		0:
-			if items.size() < 5:
-				var item = itemHotbar.instantiate()
-				item.set_attributes(indexProduct)
-				add_child(item)
-			slots = get_children()
-			slots_count = get_child_count()
-			for child in get_children():
-				child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
-		1:
-			if items.size() < 5:
-				for n in 3:
+	var precio = Global.products[indexProduct]['price']
+	if Global.money>precio:
+		match indexProduct:
+			0:
+				if items.size() < 5:
 					var item = itemHotbar.instantiate()
 					item.set_attributes(indexProduct)
 					add_child(item)
-			slots = get_children()
-			slots_count = get_child_count()
-			for child in get_children():
-				child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
-		2,3,4,5,6:
-			if 0 in items:
-				var index = items.find(0)
-				get_child(index).set_attributes(indexProduct)
+					slots = get_children()
+					slots_count = get_child_count()
+					for child in get_children():
+						child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
+					Global.money -= precio
+			1:
+				if items.size() < 5:
+					for n in 3:
+						var item = itemHotbar.instantiate()
+						item.set_attributes(indexProduct)
+						add_child(item)
+						slots = get_children()
+						slots_count = get_child_count()
+						for child in get_children():
+							child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
+						Global.money -= precio
+			2,3,4,5,6:
+				if 0 in items:
+					var index = items.find(0)
+					get_child(index).set_attributes(indexProduct)
+					Global.money -= precio

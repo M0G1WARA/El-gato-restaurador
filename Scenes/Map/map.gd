@@ -11,6 +11,8 @@ func _ready():
 	RestorationInstance.connect("removeScene", _on_return_signal.bind(RestorationInstance))
 	storeInstance.connect("removeScene", _on_return_signal.bind(storeInstance))
 	$HUD/TimeContainer/HourLabel.text = str(currentTimeHour)
+	Global.money = randi() % (1800 - 1200 + 1) + 1200
+	$HUD/TimeContainer/Label.text = '$ ' + str(Global.money)
 
 func _on_mountain_range_pressed():
 	Transition.go_to_san_francisco()
@@ -77,6 +79,7 @@ func update_canvas():
 
 func refresh_hotbar(item):
 	$Hotbar.refresh(item)
+	$HUD/TimeContainer/Label.text = '$ ' + str(Global.money)
 
 
 func _on_tent_pressed():
