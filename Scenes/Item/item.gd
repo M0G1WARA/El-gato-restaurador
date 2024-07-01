@@ -4,10 +4,10 @@ var productIndex = 0
 
 signal buy_item
 
-func set_attributes(index:int, price:int,name:String,description:String):
+func set_attributes(index:int, price:int,itemName:String,description:String):
 	$VBoxContainer/ItemButton/Sprite2D.frame = index
 	$VBoxContainer/BuyButton.text = "$ "+str(price)
-	$ItemDetails.set_attributes(name,description)
+	$ItemDetails.set_attributes(itemName,description)
 	productIndex = index
 
 func _on_item_button_pressed():

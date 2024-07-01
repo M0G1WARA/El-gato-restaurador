@@ -15,11 +15,6 @@ func _ready():
 	print(initCount)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-	
 func get_tile(mouse_pos):
 	var cell_pos = $TileMap.local_to_map(mouse_pos)
 	return cell_pos

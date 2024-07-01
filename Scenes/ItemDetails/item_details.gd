@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 
-func set_attributes(name:String,description:String):
-	$PanelContainer/VBoxContainer/Title.text = name
+func set_attributes(itemName:String,description:String):
+	$PanelContainer/VBoxContainer/Title.text = itemName
 	$PanelContainer/VBoxContainer/Description.text = description
 
 func showDetails():
