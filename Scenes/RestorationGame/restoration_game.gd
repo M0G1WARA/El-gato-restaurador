@@ -24,26 +24,32 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
-		if Global.backpack[Global.item_selected] in [2,5,6]: #3
-			get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
-			var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
-		
-			remplaazar.append(Vector2i(clicked.x, clicked.y))
-			$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
-			$TileMap.set_cells_terrain_connect(layer, remplaazar, 0, -1)
+		match  Global.backpack[Global.item_selected]:
+			2,5:
+				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
+				var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
 			
-			var particle = PaintParticles2D.instantiate()
-			particle.position = event.position
-			particle.emitting = true
-			add_child(particle)
-			
-		elif (Global.backpack[Global.item_selected] == 3 and $PointLight2D.visible == false):
-			$PointLight2D.show()
-			get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
-		elif (Global.backpack[Global.item_selected] == 3 and $PointLight2D.visible == true):
-			$PointLight2D.hide()
-		else:
-			print('no se puede usar este objeto')
+				remplaazar.append(Vector2i(clicked.x, clicked.y))
+				$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
+				$TileMap.set_cells_terrain_connect(layer, remplaazar, 0, -1)
+				
+				var particle = PaintParticles2D.instantiate()
+				particle.position = event.position
+				particle.emitting = true
+				add_child(particle)
+			3:
+				if $PointLight2D.visible == false:
+					$PointLight2D.show()
+					get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
+				else:
+					$PointLight2D.hide()
+			6:
+				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
+				var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
+				$TileMap.set_cell(layer, Vector2i(clicked.x, clicked.y), 2, Vector2i(13, 2))
+			_:
+				print('no se puede usar este objeto')
+
 
 
 func _on_hud_return_map():
