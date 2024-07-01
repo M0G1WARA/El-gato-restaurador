@@ -6,8 +6,8 @@
     1.2. [Descripción del juego](#12-descripción-del-juego)  
     1.3. [Plataformas](#13-plataformas)  
     1.4. [Género](#14-género)  
-    1.5. [Público objetivo](#14-público-objetivo)  
-    1.6. [Objetivo](#15-Objetivo)  
+    1.5. [Público objetivo](#15-público-objetivo)  
+    1.6. [Objetivo](#16-objetivo)  
 
 3. [Mecánica del juego](#2-mecánica-del-juego)
 
@@ -15,7 +15,7 @@
     2.2. [Controles](#22-controles)  
     2.3. [Objetivos y metas](#23-objetivos-y-metas)  
     2.4. [Sistema de puntuación](#24-sistema-de-puntuación)  
-    2.5. [Economía del juego](#29-economía-del-juego)  
+    2.5. [Economía del juego](#25-economía-del-juego)  
 
 5. [Narrativa](#3-narrativa)
 
@@ -41,7 +41,7 @@
 ### 1.5. Público objetivo
 - **Niños de 8 a 12 años interesados en resolver puzzles**
 
-## 1.6 Objetivo
+### 1.6 Objetivo
 - **Dar notoriedad del trabajo que realizan los restauradores a través de un videojuego. El trabajo de los restauradores es fundamental para preservar y conservar el patrimonio cultural.  Muchas veces, su labor pasa desapercibida o no es reconocida como se merece. Por ello, la idea de utilizar un videojuego para dar notoriedad a su trabajo**
 
 ## 2. mecánica del juego
