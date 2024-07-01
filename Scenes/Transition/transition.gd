@@ -8,3 +8,9 @@ func transition_scene(target: String) -> void:
 
 func show_transition():
 	$AnimationPlayer.play_backwards("fade_animation")
+
+func go_to_san_francisco():
+	$AnimationPlayer.play("san_francisco")
+
+func go_to_city():
+	$AnimationPlayer.play("city")
