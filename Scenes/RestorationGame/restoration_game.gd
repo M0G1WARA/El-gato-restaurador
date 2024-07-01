@@ -29,23 +29,27 @@ func _input(event):
 		var clicked = get_tile(event.position)
 		var remplaazar =[]
 		
-		if (Global.backpack[Global.item_selected] == 3 and $PointLight2D.visible == false):
+		if Global.backpack[Global.item_selected] in [2,5,6]: #3
+			get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
+			var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
+		
+			remplaazar.append(Vector2i(clicked.x, clicked.y))
+			$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
+			$TileMap.set_cells_terrain_connect(layer, remplaazar, 0, -1)
+			
+			var particle = PaintParticles2D.instantiate()
+			particle.position = event.position
+			particle.emitting = true
+			add_child(particle)
+			
+		elif (Global.backpack[Global.item_selected] == 3 and $PointLight2D.visible == false):
 			$PointLight2D.show()
-		else:
+			get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
+		elif (Global.backpack[Global.item_selected] == 3 and $PointLight2D.visible == true):
 			$PointLight2D.hide()
-		
-		get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
-		
-		var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
-		
-		remplaazar.append(Vector2i(clicked.x, clicked.y))
-		$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
-		$TileMap.set_cells_terrain_connect(layer, remplaazar, 0, -1)
-		
-		var particle = PaintParticles2D.instantiate()
-		particle.position = event.position
-		particle.emitting = true
-		add_child(particle)
+		else:
+			print('no se puede usar este objeto')
+
 
 func _on_hud_return_map():
 	emit_signal("removeScene")
