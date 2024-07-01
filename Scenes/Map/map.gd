@@ -42,6 +42,9 @@ func _on_return_signal(instance):
 	$Hotbar.hide()
 	$HUD.show()
 	$City/MarginContainer/PointLight2D.show()
+	if Global.wanted == true:
+		print('fuiste arrestado')
+		_on_button_pressed()
 
 
 var IntensityLevel = 1

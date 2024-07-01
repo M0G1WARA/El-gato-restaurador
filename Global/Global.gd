@@ -23,3 +23,5 @@ var item_selected: int = -1
 
 var record_days: int = 0
 var record_hours: int = 0
+
+var wanted = false

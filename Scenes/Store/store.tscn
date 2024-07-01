@@ -40,7 +40,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Back"
+text = "Regresar"
 
 [node name="FlowContainer" type="FlowContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(640, 0)

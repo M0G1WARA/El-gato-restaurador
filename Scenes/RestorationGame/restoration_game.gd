@@ -47,6 +47,7 @@ func _input(event):
 				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
 				var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
 				$TileMap.set_cell(layer, Vector2i(clicked.x, clicked.y), 2, Vector2i(13, 2))
+				Global.wanted = true
 			_:
 				print('no se puede usar este objeto')
 

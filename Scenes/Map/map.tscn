@@ -176,7 +176,7 @@ text = "$0"
 [node name="Button" type="Button" parent="HUD"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Finish"
+text = "Finalizar"
 
 [node name="Finish" parent="." instance=ExtResource("8_bd6sp")]
 visible = false
