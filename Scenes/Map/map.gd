@@ -43,8 +43,7 @@ func _on_return_signal(instance):
 	$HUD.show()
 	$City/MarginContainer/PointLight2D.show()
 	if Global.wanted == true:
-		print('fuiste arrestado')
-		_on_button_pressed()
+		$GameOver.show()
 
 
 var IntensityLevel = 1
