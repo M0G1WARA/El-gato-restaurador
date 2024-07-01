@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqudbpom07kw7"
-path="res://.godot/imported/TilesPintura.png-0760f34263ffe85ff4c8e64a742f0957.ctex"
+uid="uid://cgeiw4hafdjpl"
+path="res://.godot/imported/cave_painting.png-6d2f96abd84869b68e0df452cab2bdb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Restoration/TilesPintura.png"
-dest_files=["res://.godot/imported/TilesPintura.png-0760f34263ffe85ff4c8e64a742f0957.ctex"]
+source_file="res://Assets/Images/Restoration/cave_painting.png"
+dest_files=["res://.godot/imported/cave_painting.png-6d2f96abd84869b68e0df452cab2bdb4.ctex"]
 
 [params]
 

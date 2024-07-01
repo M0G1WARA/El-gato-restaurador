@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cscv5d1e2muae"]
 
-[ext_resource type="Texture2D" uid="uid://c2pe5li5nmoue" path="res://Assets/Images/Restoration/TilesPintura.png" id="1_4qfjb"]
+[ext_resource type="Texture2D" uid="uid://dqudbpom07kw7" path="res://Assets/Images/Restoration/TilesPintura.png" id="1_4qfjb"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_h16cg"]
 tile_data = PackedInt32Array(65536, 65538, 0, 131072, 65538, 1, 196608, 65538, 2, 65537, 131074, 0, 131073, 131074, 1, 196609, 131074, 1, 262145, 65538, 2, 2, 2, 0, 65538, 131074, 1, 131074, 131074, 1, 196610, 131074, 1, 262146, 196610, 2, 65539, 196610, 0, 131075, 196610, 1, 196611, 196610, 2, 131079, 65538, 0, 196615, 65538, 2, 131080, 196610, 0, 196616, 196610, 1, 262152, 65538, 2, 262153, 131074, 0, 327689, 65538, 2, 262154, 131074, 0, 327690, 131074, 2, 262155, 196610, 0, 327691, 196610, 2)
@@ -107,6 +107,17 @@ texture_region_size = Vector2i(80, 80)
 1:8/0 = 0
 2:8/0 = 0
 3:8/0 = 0
+10:7/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:7/0 = 0
+15:6/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+12:1/0 = 0
+14:1/0 = 0
+13:2/0 = 0
+13:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_kjty3"]
 tile_size = Vector2i(80, 80)
