@@ -22,7 +22,8 @@
 4.2 [Descargar Godot](#42-descargar-godot)  
 4.3 [Estructura del proyecto](#43-estructura-del-proyecto)
 
-5. [Acerca de](#5-acerca-de)
+5. [Acerca de](#5-acerca-de)  
+5.1 [Licencias](#51-licencias)
 
 ## 1. Cómo jugar
 
@@ -75,8 +76,8 @@ Muestra la tienda donde el jugador puede comprar objetos.
 
 ![Imagen del cambio en la pantalla 1](./images/221.jpg)
 
-4. Botón precio del objeto, le permite al jugador comprar el objeto si tiene espacio y dinero suficiente.
-5. Hotbar, lista los objetos que tiene el jugador así como su durabilidad.
+3. Botón precio del objeto, le permite al jugador comprar el objeto si tiene espacio y dinero suficiente.
+4. Hotbar, lista los objetos que tiene el jugador así como su durabilidad.
 
 
 ### 2.3. Pantalla 3
@@ -124,10 +125,13 @@ Dar click en el botón verde "code" y después click al botón "Download ZIP"
 ![Imagen de botón "Download ZIP" del proyecto](./images/4.jpg)
 
 Una vez descargado debes descomprimir el archivo, si estas usando windows 11 puedes dar click derecho y "Extraer todo..". 
+
 Si no tienes un programa para descomprimir puedes descargar [7-zip](https://7zip-es.updatestar.com/download.html).
 ### 4.2. Descargar Godot
 Para poder abrir el proyecto es necesario Godot.
-Godot esta disponible para Android, Linux, macOS, Window
+
+Godot esta disponible para Android, Linux, macOS, Window.
+
 Recomendado descargar [Godot 4.2.2 ](https://7zip-es.updatestar.com/download.html) dando click en el botón azul "Standard".
 
 Alternativas:
@@ -138,7 +142,8 @@ Alternativas:
 - [Descargar desde Epic Games Store ](https://store.epicgames.com/es-MX/p/godot-engine)
 
 Una vez descargado, abrir Godot dar click en "importar" y seleccionar la carpeta descomprimida del proyecto.
-Cuando abra el proyecto puedes abrir la carpeta Scenes/ y buscar los archivos **.tscn** para empezar a modificarlos
+
+Cuando abra el proyecto puedes abrir la carpeta Scenes/ y buscar los archivos **.tscn** para empezar a modificarlos.
 
 ### 4.3. Estructura del proyecto
 - **Assets/Images**: Contiene las imágenes utilizadas.
@@ -150,9 +155,9 @@ Cuando abra el proyecto puedes abrir la carpeta Scenes/ y buscar los archivos **
 - **Scenes**: contiene todas las escenas utilizadas separadas por carpetas.
 
 ## 5. Acerca de
-El proyecto fue hecho en Godot 4.2.2 para la Mini Game Work Jam: Conservación del Patrimonio Gráfico Rupestre
-Las imágenes fueron hechas por mi con el programa Krita.
-La tipografía es de [Kenney Fonts ](https://kenney.nl/assets/kenney-fonts)
+- El proyecto fue hecho en Godot 4.2.2 para la Mini Game Work Jam: Conservación del Patrimonio Gráfico Rupestre
+- Las imágenes fueron hechas por mi con el programa Krita.
+- La tipografía es de [Kenney Fonts ](https://kenney.nl/assets/kenney-fonts)
 
 ### 5.1 Licencias
 - Imágenes - Creative Commons CC0
