@@ -132,7 +132,7 @@ Para poder abrir el proyecto es necesario Godot.
 
 Godot esta disponible para Android, Linux, macOS, Window.
 
-Recomendado descargar [Godot 4.2.2 ](https://7zip-es.updatestar.com/download.html) dando click en el botón azul "Standard".
+Recomendado descargar [Godot 4.2.2 ](https://godotengine.org/download/archive/4.2.2-stable/) dando click en el botón azul "Standard".
 
 Alternativas:
 - [Descargar desde itch.io ](https://godotengine.itch.io/godot)
@@ -143,7 +143,7 @@ Alternativas:
 
 Una vez descargado, abrir Godot dar click en "importar" y seleccionar la carpeta descomprimida del proyecto.
 
-Cuando abra el proyecto puedes abrir la carpeta Scenes/ y buscar los archivos **.tscn** para empezar a modificarlos.
+Cuando abra el proyecto puedes abrir la carpeta Scenes/ y buscar los archivos **.tscn** para empezar a modificar las escenas y los archivos **.gd** para modificar el codigo.
 
 ### 4.3. Estructura del proyecto
 - **Assets/Images**: Contiene las imágenes utilizadas.
