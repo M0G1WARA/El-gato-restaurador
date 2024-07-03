@@ -36,7 +36,7 @@ texture = ExtResource("4_oxe7n")
 
 [node name="TileMap" parent="." instance=ExtResource("2_ko263")]
 layer_0/modulate = Color(0.12223, 0.243806, 0.364227, 1)
-layer_1/tile_data = PackedInt32Array(131078, 720898, 6, 196613, 655362, 7, 458763, 851970, 7, 393226, 786434, 6, 458755, 917506, 7, 393220, 983042, 6, 131081, 983042, 7)
+layer_1/tile_data = PackedInt32Array(458755, 917506, 7, 393220, 983042, 6, 196613, 655362, 7, 131078, 720898, 6, 131081, 983042, 7, 393226, 786434, 6, 458763, 851970, 7)
 layer_2/tile_data = PackedInt32Array()
 
 [node name="HUD" parent="." instance=ExtResource("4_4m87m")]

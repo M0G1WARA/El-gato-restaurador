@@ -102,5 +102,4 @@ func _on_tent_pressed():
 func _on_button_pressed():
 	$Timer.stop()
 	$Finish.show()
-	print('score',RestorationInstance.get_score())
 	$Finish.load_score(RestorationInstance.get_score())
