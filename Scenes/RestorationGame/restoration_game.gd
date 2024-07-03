@@ -8,8 +8,8 @@ var initCount = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var size = Vector2i(3,4)
-	var pattern = $TileMap.tile_set.get_pattern(1)
-	($TileMap as TileMap).set_layer_modulate(0,Color(0.12, 0.12, 0.12, 0.5))
+	var pattern = $TileMap.tile_set.get_pattern(randi() % 10)
+	($TileMap as TileMap).set_layer_modulate(0,Color(randf(), randf(), randf(), randf_range(0.5,0.9)))
 	$TileMap.set_pattern(0, Vector2i(1,1), pattern)
 	initCount = $TileMap.get_used_cells(0).size()
 
@@ -24,6 +24,8 @@ func _input(event):
 		var remplaazar =[]
 		
 		match  Global.backpack[Global.item_selected]:
+			0:
+				pass
 			2,5:
 				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
 				var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
