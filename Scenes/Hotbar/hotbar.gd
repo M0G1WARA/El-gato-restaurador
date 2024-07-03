@@ -51,7 +51,7 @@ func set_focus():
 
 
 func on_hotbar_pressed(indexChild):
-	print("Se hizo clic en el hijo con índice:", indexChild)
+	#print("Se hizo clic en el hijo con índice:", indexChild)
 	current_index = indexChild
 
 
@@ -71,7 +71,8 @@ func refresh(indexProduct):
 					slots = get_children()
 					slots_count = get_child_count()
 					for child in get_children():
-						child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
+						if child.get_signal_connection_list("item_selected").size() == 0:
+							child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
 					Global.money -= precio
 			1:
 				if items.size() < 5:
@@ -82,11 +83,9 @@ func refresh(indexProduct):
 					slots = get_children()
 					slots_count = get_child_count()
 					for child in get_children():
-						child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
-					print('dinero............',Global.money)
-					print('precio............',precio)
+						if child.get_signal_connection_list("item_selected").size() == 0:
+							child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
 					Global.money -= precio
-					print('dinero............',Global.money)
 			2,3,4,5,6:
 				if 0 in items:
 					var index = items.find(0)
