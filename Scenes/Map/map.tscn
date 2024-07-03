@@ -154,22 +154,26 @@ anchor_right = 1.0
 offset_bottom = 100.0
 grow_horizontal = 2
 
-[node name="TimeContainer" type="HBoxContainer" parent="HUD"]
+[node name="PanelContainer" type="PanelContainer" parent="HUD"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TimeContainer" type="HBoxContainer" parent="HUD/PanelContainer"]
 layout_mode = 2
 
-[node name="HourLabel" type="Label" parent="HUD/TimeContainer"]
+[node name="HourLabel" type="Label" parent="HUD/PanelContainer/TimeContainer"]
 layout_mode = 2
 text = "00"
 
-[node name="ColonLabel" type="Label" parent="HUD/TimeContainer"]
+[node name="ColonLabel" type="Label" parent="HUD/PanelContainer/TimeContainer"]
 layout_mode = 2
 text = ":"
 
-[node name="MinutesLabel" type="Label" parent="HUD/TimeContainer"]
+[node name="MinutesLabel" type="Label" parent="HUD/PanelContainer/TimeContainer"]
 layout_mode = 2
 text = "00"
 
-[node name="Label" type="Label" parent="HUD/TimeContainer"]
+[node name="Label" type="Label" parent="HUD/PanelContainer/TimeContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1.92523e-07, 0.983666, 5.39064e-06, 1)
 text = "$0"

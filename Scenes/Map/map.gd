@@ -10,9 +10,9 @@ var currentTimeMinutes = 0
 func _ready():
 	RestorationInstance.connect("removeScene", _on_return_signal.bind(RestorationInstance))
 	storeInstance.connect("removeScene", _on_return_signal.bind(storeInstance))
-	$HUD/TimeContainer/HourLabel.text = str(currentTimeHour)
+	$HUD/PanelContainer/TimeContainer/HourLabel.text = str(currentTimeHour)
 	Global.money = randi() % (1800 - 1200 + 1) + 1200
-	$HUD/TimeContainer/Label.text = '$ ' + str(Global.money)
+	$HUD/PanelContainer/TimeContainer/Label.text = '$ ' + str(Global.money)
 
 func _on_mountain_range_pressed():
 	Transition.go_to_san_francisco()
@@ -25,6 +25,7 @@ func _on_city_pressed():
 	$MountainRange.hide()
 
 func _on_store_pressed():
+	$Timer.stop()
 	Transition.show_transition()
 	$Instances.add_child(storeInstance)
 	$Hotbar.show()
@@ -32,7 +33,6 @@ func _on_store_pressed():
 	$City/MarginContainer/PointLight2D.hide()
 
 func _on_cave_painting_pressed():
-	#Transition.transition_scene("res://Scenes/RestorationGame/restoration_game.tscn")
 	$Instances.add_child(RestorationInstance)
 	$Hotbar.show()
 	$City/MarginContainer/PointLight2D.hide()
@@ -42,6 +42,8 @@ func _on_return_signal(instance):
 	$Hotbar.hide()
 	$HUD.show()
 	$City/MarginContainer/PointLight2D.show()
+	if $Timer.is_stopped():
+		$Timer.start()
 	if Global.wanted == true:
 		$GameOver.show()
 
@@ -54,7 +56,7 @@ func _on_timer_timeout():
 		currentTimeMinutes=0
 		update_canvas()
 	
-	$HUD/TimeContainer/MinutesLabel.text = '00' if (currentTimeMinutes==0) else str(currentTimeMinutes)
+	$HUD/PanelContainer/TimeContainer/MinutesLabel.text = '00' if (currentTimeMinutes==0) else str(currentTimeMinutes)
 
 
 func update_canvas():
@@ -65,7 +67,7 @@ func update_canvas():
 		Global.record_days +=1
 		currentTimeHour = 0
 	
-	$HUD/TimeContainer/HourLabel.text =  '00' if (currentTimeHour==0) else str(currentTimeHour)
+	$HUD/PanelContainer/TimeContainer/HourLabel.text =  '00' if (currentTimeHour==0) else str(currentTimeHour)
 	
 	if currentTimeHour >= 18 and currentTimeHour <= 23:
 		IntensityLevel -= 0.15#0.126
@@ -81,7 +83,7 @@ func update_canvas():
 
 func refresh_hotbar(item):
 	$Hotbar.refresh(item)
-	$HUD/TimeContainer/Label.text = '$ ' + str(Global.money)
+	$HUD/PanelContainer/TimeContainer/Label.text = '$ ' + str(Global.money)
 
 
 func _on_tent_pressed():
