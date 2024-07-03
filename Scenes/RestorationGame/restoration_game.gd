@@ -12,7 +12,6 @@ func _ready():
 	($TileMap as TileMap).set_layer_modulate(0,Color(0.12, 0.12, 0.12, 0.5))
 	$TileMap.set_pattern(0, Vector2i(1,1), pattern)
 	initCount = $TileMap.get_used_cells(0).size()
-	print(initCount)
 
 
 func get_tile(mouse_pos):
@@ -49,7 +48,7 @@ func _input(event):
 				$TileMap.set_cell(layer, Vector2i(clicked.x, clicked.y), 2, Vector2i(13, 2))
 				Global.wanted = true
 			_:
-				print('no se puede usar este objeto')
+				Messages.show_message("No se puede usar este objeto")
 
 
 

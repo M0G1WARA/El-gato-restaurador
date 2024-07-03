@@ -16,7 +16,7 @@ func _on_select_button_pressed():
 
 
 func _on_item_selected():
-	print("item seleccionado")
+	pass
 
 func updateUses():
 	if $VBoxContainer/ProgressBar.value > 1:

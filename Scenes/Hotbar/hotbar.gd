@@ -79,13 +79,18 @@ func refresh(indexProduct):
 						var item = itemHotbar.instantiate()
 						item.set_attributes(indexProduct)
 						add_child(item)
-						slots = get_children()
-						slots_count = get_child_count()
-						for child in get_children():
-							child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
-						Global.money -= precio
+					slots = get_children()
+					slots_count = get_child_count()
+					for child in get_children():
+						child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
+					print('dinero............',Global.money)
+					print('precio............',precio)
+					Global.money -= precio
+					print('dinero............',Global.money)
 			2,3,4,5,6:
 				if 0 in items:
 					var index = items.find(0)
 					get_child(index).set_attributes(indexProduct)
 					Global.money -= precio
+	else:
+		Messages.show_message("No tienes dinero suficiente")
