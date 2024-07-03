@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Transition="*res://Scenes/Transition/transition.tscn"
 Global="*res://Global/Global.gd"
+Messages="*res://Scenes/Messages/messages.tscn"
 
 [display]
 
