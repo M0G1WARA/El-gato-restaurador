@@ -85,15 +85,16 @@ func refresh_hotbar(item):
 
 
 func _on_tent_pressed():
-	var tmpTime = 0
-	if currentTimeHour >= 20 or (currentTimeHour>=0 and currentTimeHour<6):
-		tmpTime = 30-currentTimeHour if currentTimeHour>= 20 else 6-currentTimeHour
-		print('waaa')
-		for n in tmpTime:
-			print('timeout ',n)
-			update_canvas()
+	if 4 in Global.backpack:
+		var tmpTime = 0
+		if currentTimeHour >= 20 or (currentTimeHour>=0 and currentTimeHour<6):
+			tmpTime = 30-currentTimeHour if currentTimeHour>= 20 else 6-currentTimeHour
+			for n in tmpTime:
+				update_canvas()
+		else:
+			Messages.show_message("No puedes dormir durante el dia")
 	else:
-		print('no puedes dormir')
+		Messages.show_message("Necesitas una Tienda de campaña para dormir \nPuedes comprarla en la tienda")
 
 
 func _on_button_pressed():
