@@ -8,4 +8,9 @@ func _ready():
 		
 
 func _on_start_pressed():
+	Global.backpack= [2]
+	Global.item_selected = -1
+	Global.record_days = 0
+	Global.record_hours = 0
+	Global.wanted = false
 	Transition.transition_scene("res://Scenes/Map/map.tscn")

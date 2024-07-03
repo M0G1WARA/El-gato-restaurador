@@ -91,5 +91,7 @@ func refresh(indexProduct):
 					var index = items.find(0)
 					get_child(index).set_attributes(indexProduct)
 					Global.money -= precio
+				else:
+					Messages.show_message("No tienes espacio")
 	else:
 		Messages.show_message("No tienes dinero suficiente")
