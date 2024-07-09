@@ -21,6 +21,7 @@ var backpack: Array[int] = [2]
 
 var item_selected: int = -1
 
+var record_score: int = 0
 var record_days: int = 0
 var record_hours: int = 0
 
