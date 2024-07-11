@@ -55,8 +55,8 @@ func on_hotbar_pressed(indexChild):
 	current_index = indexChild
 
 
-func _on_update_uses():
-	get_child(current_index).updateUses()
+func _on_update_uses(index:int = current_index):
+	get_child(index).updateUses()
 
 
 func refresh(indexProduct):
