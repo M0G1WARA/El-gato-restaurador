@@ -2,12 +2,10 @@ extends Control
 
 func _ready():
 	if Global.record_score > 0:
-		$MarginContainer/VBoxContainer/ScoreContainer/ProgressBar.value = Global.record_score
-		$MarginContainer/VBoxContainer/RecordContainer/Days.text = str(Global.record_days)
-		$MarginContainer/VBoxContainer/RecordContainer/Hours.text = str(Global.record_hours)
-		$MarginContainer/VBoxContainer/ScoreContainer.show()
+		$MarginContainer/VBoxContainer/RecordContainer/TimeContainer/Days.text = str(Global.record_days)
+		$MarginContainer/VBoxContainer/RecordContainer/TimeContainer/Hours.text = str(Global.record_hours)
+		$MarginContainer/VBoxContainer/RecordContainer/ScoreContainer/ProgressBar.value = Global.record_score
 		$MarginContainer/VBoxContainer/RecordContainer.show()
-		$MarginContainer/VBoxContainer/ChallengesButton.show()
 		
 
 func _on_start_pressed():

@@ -42,50 +42,56 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Comenzar"
 
-[node name="ScoreContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="RecordContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
+layout_mode = 2
+
+[node name="ChallengesButton" type="Button" parent="MarginContainer/VBoxContainer/RecordContainer"]
+layout_mode = 2
+text = "Desafios"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+layout_mode = 2
+text = "Record"
+horizontal_alignment = 1
+
+[node name="ScoreContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RecordContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScoreContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer/ScoreContainer"]
 layout_mode = 2
 text = "Completado"
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/ScoreContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/RecordContainer/ScoreContainer"]
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 step = 1.0
 value = 50.0
 rounded = true
 
-[node name="RecordContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/RecordContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer/TimeContainer"]
 layout_mode = 2
-text = "Tiempo record: "
+text = "Tiempo: "
 
-[node name="Days" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="Days" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer/TimeContainer"]
 layout_mode = 2
 text = "0"
 
-[node name="DaysLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="DaysLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer/TimeContainer"]
 layout_mode = 2
 text = " Dias "
 
-[node name="Hours" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="Hours" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer/TimeContainer"]
 layout_mode = 2
 text = "0"
 
-[node name="HoursLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer"]
+[node name="HoursLabel" type="Label" parent="MarginContainer/VBoxContainer/RecordContainer/TimeContainer"]
 layout_mode = 2
 text = " Horas"
-
-[node name="ChallengesButton" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Desafios"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
