@@ -4,8 +4,8 @@ extends CanvasLayer
 func load_score(score):
 	$MarginContainer/PanelContainer/VBoxContainer/TimeContainer/Days.text = str(Global.tmp_days)
 	$MarginContainer/PanelContainer/VBoxContainer/TimeContainer/Hours.text = str(Global.tmp_hours)
-	for n in score:
-		await get_tree().create_timer(0.2).timeout
+	for n in int(score):
+		await get_tree().create_timer(0.1).timeout
 		$MarginContainer/PanelContainer/VBoxContainer/PointsContainer/ProgressBar.value +=1
 	if score > Global.record_score:
 		set_record(score)

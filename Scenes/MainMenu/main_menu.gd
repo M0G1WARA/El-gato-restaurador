@@ -9,6 +9,8 @@ func _ready():
 		
 
 func _on_start_pressed():
+	Global.tmp_days = 0
+	Global.tmp_hours = 0
 	Global.backpack= [2]
 	Global.item_selected = -1
 	Global.wanted = false
