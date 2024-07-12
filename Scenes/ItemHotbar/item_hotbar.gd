@@ -3,7 +3,7 @@ extends PanelContainer
 signal item_selected
 
 func set_attributes(valor: int = 0):
-	if(valor!=0 and valor!=1):
+	if(valor!=0):
 		$VBoxContainer.show()
 		$VBoxContainer/TextureRect/Sprite2D.frame = valor
 		$VBoxContainer/ProgressBar.max_value = Global.products[valor]["uses"]
@@ -13,10 +13,6 @@ func set_attributes(valor: int = 0):
 
 func _on_select_button_pressed():
 	emit_signal("item_selected")
-
-
-func _on_item_selected():
-	pass
 
 func updateUses():
 	if $VBoxContainer/ProgressBar.value > 1:

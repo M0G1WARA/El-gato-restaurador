@@ -64,28 +64,9 @@ func refresh(indexProduct):
 	if Global.money>precio:
 		match indexProduct:
 			0:
-				if items.size() < 5:
-					var item = itemHotbar.instantiate()
-					item.set_attributes(indexProduct)
-					add_child(item)
-					slots = get_children()
-					slots_count = get_child_count()
-					for child in get_children():
-						if child.get_signal_connection_list("item_selected").size() == 0:
-							child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
-					Global.money -= precio
+				add_slots(1,precio)
 			1:
-				if items.size() < 5:
-					for n in 3:
-						var item = itemHotbar.instantiate()
-						item.set_attributes(indexProduct)
-						add_child(item)
-					slots = get_children()
-					slots_count = get_child_count()
-					for child in get_children():
-						if child.get_signal_connection_list("item_selected").size() == 0:
-							child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
-					Global.money -= precio
+				add_slots(3,precio)
 			2,3,4,5,6:
 				if 0 in items:
 					var index = items.find(0)
@@ -95,3 +76,16 @@ func refresh(indexProduct):
 					Messages.show_message("No tienes espacio")
 	else:
 		Messages.show_message("No tienes dinero suficiente")
+
+func add_slots(number_slots:int, precio: int):
+	if items.size() < 5:
+		for n in number_slots:
+			var item = itemHotbar.instantiate()
+			item.set_attributes()
+			add_child(item)
+		slots = get_children()
+		slots_count = get_child_count()
+		for child in get_children():
+			if child.get_signal_connection_list("item_selected").size() == 0:
+					child.connect("item_selected", on_hotbar_pressed.bind(child.get_index()))
+		Global.money -= precio
