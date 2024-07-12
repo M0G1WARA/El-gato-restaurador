@@ -25,11 +25,10 @@ func _input(event):
 		
 		match  Global.backpack[Global.item_selected]:
 			0:
-				pass
+				Messages.show_message("No tienes ningun objeto seleccionado")
 			2,5:
-				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
 				var layer = Global.products[Global.backpack[Global.item_selected]]["layer"]
-			
+
 				remplaazar.append(Vector2i(clicked.x, clicked.y))
 				$TileMap.erase_cell(layer,Vector2i(clicked.x, clicked.y))
 				$TileMap.set_cells_terrain_connect(layer, remplaazar, 0, -1)
@@ -38,6 +37,8 @@ func _input(event):
 				particle.position = event.position
 				particle.emitting = true
 				add_child(particle)
+				
+				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
 			3:
 				if $PointLight2D.visible == false:
 					$PointLight2D.show()
