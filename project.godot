@@ -13,7 +13,7 @@ config_version=5
 config/name="El gato restaurador"
 run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Images/Icon/icon.png"
 
 [autoload]
 
