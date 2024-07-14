@@ -54,10 +54,6 @@ func _input(event):
 				Messages.show_message("No se puede usar este objeto")
 
 
-
-func _on_hud_return_map():
-	emit_signal("removeScene")
-
 func get_score():
 	var tmpCount:float = initCount - $TileMap.get_used_cells(0).size()
 	var porcentaje:float = (tmpCount / initCount)*100 if initCount != 0 else 0.0

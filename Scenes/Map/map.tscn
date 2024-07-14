@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="4_s1lop"]
 [ext_resource type="Texture2D" uid="uid://ct8klu0ljfr8y" path="res://Assets/Images/Map/tent.png" id="6_q833l"]
 [ext_resource type="Texture2D" uid="uid://dtunjo8u6cloy" path="res://Assets/Images/Map/SanFranciscoBackground.jpg" id="6_rgj3f"]
-[ext_resource type="PackedScene" uid="uid://bkx2a1r3vegdk" path="res://Scenes/Finish/finish.tscn" id="8_bd6sp"]
+[ext_resource type="PackedScene" uid="uid://uy3fd4npftj0" path="res://Scenes/HUD/hud.tscn" id="9_o1cha"]
 [ext_resource type="PackedScene" uid="uid://ih2jxnu4p88e" path="res://Scenes/GameOver/game_over.tscn" id="10_tot43"]
 
 [sub_resource type="Gradient" id="Gradient_slbhv"]
@@ -120,9 +120,6 @@ text = "Regresar"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="Instances" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -147,44 +144,7 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HUD" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 100.0
-grow_horizontal = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="HUD"]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="TimeContainer" type="HBoxContainer" parent="HUD/PanelContainer"]
-layout_mode = 2
-
-[node name="HourLabel" type="Label" parent="HUD/PanelContainer/TimeContainer"]
-layout_mode = 2
-text = "00"
-
-[node name="ColonLabel" type="Label" parent="HUD/PanelContainer/TimeContainer"]
-layout_mode = 2
-text = ":"
-
-[node name="MinutesLabel" type="Label" parent="HUD/PanelContainer/TimeContainer"]
-layout_mode = 2
-text = "00"
-
-[node name="Label" type="Label" parent="HUD/PanelContainer/TimeContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1.92523e-07, 0.983666, 5.39064e-06, 1)
-text = "$0"
-
-[node name="Button" type="Button" parent="HUD"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Finalizar"
-
-[node name="Finish" parent="." instance=ExtResource("8_bd6sp")]
-visible = false
+[node name="HUD" parent="." instance=ExtResource("9_o1cha")]
 
 [node name="GameOver" parent="." instance=ExtResource("10_tot43")]
 visible = false
@@ -194,5 +154,3 @@ visible = false
 [connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/Tent" to="." method="_on_tent_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/City" to="." method="_on_city_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]

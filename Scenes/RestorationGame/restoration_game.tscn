@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://xfp5fpgug3ml"]
+[gd_scene load_steps=8 format=3 uid="uid://xfp5fpgug3ml"]
 
 [ext_resource type="Texture2D" uid="uid://sgfklaqpanji" path="res://Assets/Images/Restoration/RockTexture.jpg" id="1_h5wgv"]
 [ext_resource type="Script" path="res://Scenes/RestorationGame/restoration_game.gd" id="1_tcarl"]
 [ext_resource type="PackedScene" uid="uid://cscv5d1e2muae" path="res://Scenes/TileMap/tile_map.tscn" id="2_ko263"]
 [ext_resource type="PackedScene" uid="uid://bqafd40mkkjsg" path="res://Particles/PaintParticles2D/paint_particles_2d.tscn" id="2_y33s5"]
-[ext_resource type="PackedScene" uid="uid://uy3fd4npftj0" path="res://Scenes/HUD/hud.tscn" id="4_4m87m"]
 [ext_resource type="Texture2D" uid="uid://cgeiw4hafdjpl" path="res://Assets/Images/Restoration/cave_painting.png" id="4_oxe7n"]
 
 [sub_resource type="Gradient" id="Gradient_ia317"]
@@ -39,11 +38,7 @@ layer_0/modulate = Color(0.12223, 0.243806, 0.364227, 1)
 layer_1/tile_data = PackedInt32Array(458755, 917506, 7, 393220, 983042, 6, 196613, 655362, 7, 131078, 720898, 6, 131081, 983042, 7, 393226, 786434, 6, 458763, 851970, 7)
 layer_2/tile_data = PackedInt32Array()
 
-[node name="HUD" parent="." instance=ExtResource("4_4m87m")]
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
 position = Vector2(666, 397)
 texture = SubResource("GradientTexture2D_nuev2")
-
-[connection signal="returnMap" from="HUD" to="." method="_on_hud_return_map"]

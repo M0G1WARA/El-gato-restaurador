@@ -1,26 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://uy3fd4npftj0"]
+[gd_scene load_steps=3 format=3 uid="uid://uy3fd4npftj0"]
 
 [ext_resource type="Script" path="res://Scenes/HUD/hud.gd" id="1_y6vwc"]
+[ext_resource type="PackedScene" uid="uid://bkx2a1r3vegdk" path="res://Scenes/Finish/finish.tscn" id="2_ugi7a"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_y6vwc")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -336.0
-offset_bottom = 118.0
-grow_horizontal = 0
+offset_bottom = 100.0
+grow_horizontal = 2
 
-[node name="ButtonsContainer" type="HFlowContainer" parent="MarginContainer"]
+[node name="ReturnButton" type="Button" parent="MarginContainer"]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-alignment = 2
-
-[node name="Return" type="Button" parent="MarginContainer/ButtonsContainer"]
-layout_mode = 2
+size_flags_horizontal = 0
 text = "Regresar"
 
-[connection signal="pressed" from="MarginContainer/ButtonsContainer/Return" to="." method="_on_return_pressed"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HourLabel" type="Label" parent="MarginContainer/PanelContainer/TimeContainer"]
+layout_mode = 2
+text = "00"
+
+[node name="ColonLabel" type="Label" parent="MarginContainer/PanelContainer/TimeContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="MinutesLabel" type="Label" parent="MarginContainer/PanelContainer/TimeContainer"]
+layout_mode = 2
+text = "00"
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TimeContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.92523e-07, 0.983666, 5.39064e-06, 1)
+text = "$0"
+
+[node name="FinishButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Finalizar"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Finish" parent="." instance=ExtResource("2_ugi7a")]
+visible = false
+
+[connection signal="pressed" from="MarginContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="MarginContainer/FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
