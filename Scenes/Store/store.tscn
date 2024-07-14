@@ -42,6 +42,16 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Regresar"
 
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.92523e-07, 0.983666, 5.39064e-06, 1)
+text = "$0"
+
 [node name="FlowContainer" type="FlowContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2

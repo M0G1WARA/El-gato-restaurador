@@ -6,7 +6,7 @@ var RestorationInstance = scene.instantiate()
 var storeInstance = store.instantiate()
 
 func _ready():
-	RestorationInstance.connect("removeScene", _on_return_signal.bind(RestorationInstance))
+	$HUD.connect("removeScene", _on_return_signal.bind(RestorationInstance))
 	storeInstance.connect("removeScene", _on_return_signal.bind(storeInstance))
 
 func _on_mountain_range_pressed():
@@ -28,12 +28,14 @@ func _on_store_pressed():
 	$City/MarginContainer/PointLight2D.hide()
 
 func _on_cave_painting_pressed():
+	$HUD.show_return_button()
 	$Instances.add_child(RestorationInstance)
 	$Hotbar.show()
 	$HUD.show()
 	$City/MarginContainer/PointLight2D.hide()
 	
 func _on_return_signal(instance):
+	$HUD.hide_return_button()
 	$Instances.remove_child(instance)
 	$Hotbar.hide()
 	$HUD.show()
@@ -46,7 +48,8 @@ func _on_return_signal(instance):
 
 func refresh_hotbar(item):
 	$Hotbar.refresh(item)
-	$HUD/PanelContainer/TimeContainer/Label.text = '$ ' + str(Global.money)
+	$HUD.update_money()
+	storeInstance.update_money()
 
 
 func _on_tent_pressed():
@@ -62,3 +65,7 @@ func close_store():
 
 func update_canvas_modulate():
 	$CanvasModulate.color = Color(Global.IntensityLevel, Global.IntensityLevel, Global.IntensityLevel)
+
+
+func _on_timer_timeout():
+	$HUD._on_timer_timeout()

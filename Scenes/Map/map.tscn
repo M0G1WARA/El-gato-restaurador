@@ -144,6 +144,9 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="HUD" parent="." instance=ExtResource("9_o1cha")]
 
 [node name="GameOver" parent="." instance=ExtResource("10_tot43")]
@@ -154,3 +157,4 @@ visible = false
 [connection signal="pressed" from="MountainRange/MarginContainer/CavePainting" to="." method="_on_cave_painting_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/Tent" to="." method="_on_tent_pressed"]
 [connection signal="pressed" from="MountainRange/MarginContainer/City" to="." method="_on_city_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

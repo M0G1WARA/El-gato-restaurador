@@ -6,6 +6,7 @@ signal removeScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var index = 0
+	$MarginContainer/PanelContainer/Label.text = '$ ' + str(Global.money)
 	for i in Global.products:
 		var productInstance = product.instantiate()
 		productInstance.set_attributes(index,i["price"],i["name"],i["description"])
@@ -20,3 +21,6 @@ func _on_back_button_pressed():
 
 func on_buy_item_pressed(indexProduct):
 	get_parent().get_parent().refresh_hotbar(indexProduct)
+
+func update_money():
+	$MarginContainer/PanelContainer/Label.text = '$ ' + str(Global.money)

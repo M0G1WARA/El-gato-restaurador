@@ -1,7 +1,5 @@
 extends Node2D
 
-signal removeScene
-
 @export var PaintParticles2D: PackedScene
 var initCount = 0
 

@@ -47,12 +47,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Finalizar"
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="Finish" parent="." instance=ExtResource("2_ugi7a")]
 visible = false
 
 [connection signal="pressed" from="MarginContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="MarginContainer/FinishButton" to="." method="_on_finish_button_pressed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

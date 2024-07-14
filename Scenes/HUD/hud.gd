@@ -16,15 +16,15 @@ func _on_return_button_pressed():
 
 
 func _on_finish_button_pressed():
-	$Timer.stop()
+	get_parent().get_node('Timer').stop()
 	$Finish.show()
 	$Finish.load_score(get_parent().RestorationInstance.get_score())
 
-func change_visible_return_button():
-	if $MarginContainer/ReturnButton.visible == true:
-		$MarginContainer/ReturnButton.show()
-	else:
-		$MarginContainer/ReturnButton.hide()
+func show_return_button():
+	$MarginContainer/ReturnButton.show()
+
+func hide_return_button():
+	$MarginContainer/ReturnButton.hide()
 
 func sleep():
 	if 4 in Global.backpack:
@@ -70,3 +70,6 @@ func _on_timer_timeout():
 		update_canvas()
 	
 	$MarginContainer/PanelContainer/TimeContainer/MinutesLabel.text = '00' if (currentTimeMinutes==0) else str(currentTimeMinutes)
+
+func update_money():
+	$MarginContainer/PanelContainer/TimeContainer/Label.text = '$ ' + str(Global.money)
