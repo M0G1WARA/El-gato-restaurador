@@ -38,6 +38,7 @@ func _input(event):
 				particle.emitting = true
 				add_child(particle)
 				
+				get_parent().get_parent().get_node('Timer').emit_signal("timeout")
 				get_parent().get_parent().get_node('Hotbar').emit_signal("updateUses")
 			3:
 				if $PointLight2D.visible == false:
