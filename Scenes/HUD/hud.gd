@@ -31,7 +31,8 @@ func sleep():
 		var tmpTime = 0
 		if currentTimeHour >= 20 or (currentTimeHour>=0 and currentTimeHour<6):
 			var index = Global.backpack.find(4)
-			$Hotbar.emit_signal("updateUses",index)
+			get_parent().get_node('Hotbar').emit_signal("updateUses",index)
+			Transition.show_transition()
 			tmpTime = 30-currentTimeHour if currentTimeHour>= 20 else 6-currentTimeHour
 			for n in tmpTime:
 				update_canvas()
