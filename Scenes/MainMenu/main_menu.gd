@@ -6,6 +6,8 @@ func _ready():
 		$MarginContainer/VBoxContainer/RecordContainer/TimeContainer/Hours.text = str(Global.record_hours)
 		$MarginContainer/VBoxContainer/RecordContainer/ScoreContainer/ProgressBar.value = Global.record_score
 		$MarginContainer/VBoxContainer/RecordContainer.show()
+		$TextureRect.hide()
+		$TextureRect2.show()
 		
 
 func _on_start_pressed():

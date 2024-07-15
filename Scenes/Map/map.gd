@@ -6,6 +6,7 @@ var RestorationInstance = scene.instantiate()
 var storeInstance = store.instantiate()
 
 func _ready():
+	Transition.reset_position()
 	$HUD.connect("removeScene", _on_return_signal.bind(RestorationInstance))
 	storeInstance.connect("removeScene", _on_return_signal.bind(storeInstance))
 
@@ -28,6 +29,9 @@ func _on_store_pressed():
 	$City/MarginContainer/PointLight2D.hide()
 
 func _on_cave_painting_pressed():
+	$HUD.hide()
+	Transition.go_to_cave_painting()
+	await get_tree().create_timer(Global.weight).timeout
 	$HUD.show_return_button()
 	$Instances.add_child(RestorationInstance)
 	$Hotbar.show()
@@ -35,6 +39,12 @@ func _on_cave_painting_pressed():
 	$City/MarginContainer/PointLight2D.hide()
 	
 func _on_return_signal(instance):
+	$HUD.hide()
+	if(instance==RestorationInstance):
+		Transition.go_to_mountain_range()
+		await get_tree().create_timer(Global.weight).timeout
+	else:
+		Transition.show_transition()
 	$HUD.hide_return_button()
 	$Instances.remove_child(instance)
 	$Hotbar.hide()

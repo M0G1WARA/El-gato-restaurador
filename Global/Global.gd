@@ -2,6 +2,7 @@ extends Node
 
 var money = 0
 var IntensityLevel = 1
+var weight = 2.0
 
 var backpacks: Array[Dictionary] = [
 	{"price":100, "name" : "Cinturon con bolsa", "description": "Te permite llevar 1 objeto adicional", "layer":-1, "uses":0},

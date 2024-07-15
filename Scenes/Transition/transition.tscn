@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://wjph2mwfqsl1"]
+[gd_scene load_steps=13 format=3 uid="uid://wjph2mwfqsl1"]
 
 [ext_resource type="Script" path="res://Scenes/Transition/transition.gd" id="1_xc60r"]
 [ext_resource type="Texture2D" uid="uid://v5rvnav6g60k" path="res://Assets/Images/Transition/car.png" id="2_1w32o"]
+[ext_resource type="Texture2D" uid="uid://iibs4kntusl4" path="res://Assets/Images/Transition/climb.png" id="3_ni5q7"]
+[ext_resource type="Texture2D" uid="uid://c608oumbehfch" path="res://Assets/Images/Transition/climb-bag.png" id="4_fqsf5"]
+[ext_resource type="Texture2D" uid="uid://dogotpd75f37d" path="res://Assets/Images/Transition/climb-tent.png" id="5_4igw8"]
+[ext_resource type="Texture2D" uid="uid://dc4wdxplin14q" path="res://Assets/Images/Transition/climb-backpack.png" id="6_pbfnw"]
 
 [sub_resource type="Animation" id="Animation_on0oy"]
 length = 0.001
@@ -41,6 +45,54 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cat/Climb:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cat/ClimbBag:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cat/ClimbTent:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Cat/ClimbBackpack:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_xqy4c"]
 resource_name = "city"
@@ -66,7 +118,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1300, 480), Vector2(-500, 480)]
+"values": [Vector2(1300, 480), Vector2(-600, 480)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -122,7 +174,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-500, 480), Vector2(1400, 480)]
+"values": [Vector2(-500, 480), Vector2(1600, 480)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -137,10 +189,64 @@ tracks/2/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_boitw"]
+resource_name = "climb"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat/Climb:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cat/ClimbBag:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cat/ClimbTent:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cat/ClimbBackpack:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2vhnq"]
 _data = {
 "RESET": SubResource("Animation_on0oy"),
 "city": SubResource("Animation_xqy4c"),
+"climb": SubResource("Animation_boitw"),
 "fade_animation": SubResource("Animation_5vdfq"),
 "san_francisco": SubResource("Animation_eiikb")
 }
@@ -170,3 +276,25 @@ offset_right = -20.0
 offset_bottom = 600.0
 texture = ExtResource("2_1w32o")
 flip_h = true
+
+[node name="Cat" type="Node2D" parent="."]
+position = Vector2(640, 900)
+
+[node name="Climb" type="Sprite2D" parent="Cat"]
+texture = ExtResource("3_ni5q7")
+hframes = 3
+
+[node name="ClimbBag" type="Sprite2D" parent="Cat"]
+visible = false
+texture = ExtResource("4_fqsf5")
+hframes = 3
+
+[node name="ClimbTent" type="Sprite2D" parent="Cat"]
+visible = false
+texture = ExtResource("5_4igw8")
+hframes = 3
+
+[node name="ClimbBackpack" type="Sprite2D" parent="Cat"]
+visible = false
+texture = ExtResource("6_pbfnw")
+hframes = 3

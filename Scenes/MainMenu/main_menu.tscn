@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://s20bfafoiddg"]
+[gd_scene load_steps=3 format=3 uid="uid://s20bfafoiddg"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/main_menu.gd" id="1_6etfi"]
+[ext_resource type="Texture2D" uid="uid://h5hbiw2kw6kp" path="res://Assets/Images/MainMenu/gato-restaurador.png" id="2_0eew5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +20,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12223, 0.243806, 0.364227, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -280.0
+offset_right = 140.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_0eew5")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -280.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_0eew5")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
