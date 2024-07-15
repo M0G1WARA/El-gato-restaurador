@@ -6,6 +6,7 @@
    - [Navegador web](#111-navegador-web)
    - [Windows](#112-windows)
    - [Linux](#113-linux)
+   - [Android](#114-android)
 
     1.2. [Controles](#12-controles)  
     1.3. [Acciones](#13-acciones)  
@@ -17,7 +18,7 @@
 
 3. [Objetos](#3-objetos)  
 
-4. [Extra: Modificar el juego](#4-modificar-el-juego)  
+4. [Extra: Modificar el videojuego](#4-modificar-el-videojuego)  
 4.1 [Descargar proyecto](#41-descargar-proyecto)  
 4.2 [Descargar Godot](#42-descargar-godot)  
 4.3 [Estructura del proyecto](#43-estructura-del-proyecto)
@@ -34,14 +35,20 @@ Ir a [itch.io](https://m0g1wara.itch.io/el-gato-restaurador) y dar click en el b
 ![Imagen del botón "Run Game" en itch.io](./images/111.jpg)
 
 #### 1.1.2 **Windows** 
-Ir a [itch.io](https://m0g1wara.itch.io/el-gato-restaurador) y descargar el archivo ejecutable "el gato restaurador.exe" con el botón "Download".
+Ir a [itch.io](https://m0g1wara.itch.io/el-gato-restaurador) y descargar el archivo ejecutable "El Gato Restaurador.exe" con el botón "Download".
 
 ![Imagen del botón "Download" en itch.io](./images/112.jpg)
 
 #### 1.1.3 **Linux** 
-Ir a [itch.io](https://m0g1wara.itch.io/el-gato-restaurador) y descargar el archivo ejecutable "el gato restaurador.x86_64" con el botón "Download".
+Ir a [itch.io](https://m0g1wara.itch.io/el-gato-restaurador) y descargar el archivo ejecutable "El Gato Restaurador.x86_64" con el botón "Download".
+
 
 ![Imagen del botón "Download" en itch.io](./images/113.jpg)
+
+#### 1.1.4 **Android** 
+Ir a [itch.io](https://m0g1wara.itch.io/el-gato-restaurador) y descargar el archivo ejecutable "El Gato Restaurador.apk" con el botón "Download".
+
+![Imagen del botón "Download" en itch.io](./images/114.jpg)
 
 ### 1.2. Controles
 Se utiliza el botón izquierdo del mouse para interactuar.
@@ -65,6 +72,7 @@ Muestra una tienda y a lo lejos la sierra de San Francisco, arriba a la izquierd
 1. Botón Tienda, le permite al jugador ir a la Pantalla 2.
 2. Botón Sierra de san Francisco, le permite al jugador ir a la pantalla 3.
 3. Botón finalizar, le permite al jugador finalizar la partida en cualquier momento y obtener su puntuación.
+4. Muestra la hora dentro del videojuego y el dinero restante.
 
 ### 2.2. Pantalla 2
 Muestra la tienda donde el jugador puede comprar objetos.
@@ -78,6 +86,7 @@ Muestra la tienda donde el jugador puede comprar objetos.
 
 3. Botón precio del objeto, le permite al jugador comprar el objeto si tiene espacio y dinero suficiente.
 4. Hotbar, lista los objetos que tiene el jugador así como su durabilidad.
+5. Muestra el dinero restante.
 
 
 ### 2.3. Pantalla 3
@@ -89,6 +98,7 @@ Muestra una tienda de campaña y la sierra de San Francisco.
 2. Botón Pintura rupestre, le permite al jugador ir a la pantalla 4.
 3. Botón finalizar, le permite al jugador finalizar la partida en cualquier momento y obtener su puntuación.
 4. Botón tienda de campaña, le permite al jugador pasar la  noche si compro la tienda de campaña en la tienda.
+5. Muestra la hora dentro del videojuego y el dinero restante.
 
 ### 2.4. Pantalla 4
 Muestra una pintura rupestre que debe ser restaurada
@@ -96,8 +106,9 @@ Muestra una pintura rupestre que debe ser restaurada
 ![Imagen de la pantalla 4](./images/24.jpg)
 
 1. Hotbar, lista los objetos que tiene el jugador así como su durabilidad.
-2. Botón finalizar, le permite al jugador finalizar la partida en cualquier momento y obtener su puntuación.
-3. Botón Regresar, le permite al jugador ir a la Pantalla 3.
+2. Botón Regresar, le permite al jugador ir a la Pantalla 3.
+3. Botón finalizar, le permite al jugador finalizar la partida en cualquier momento y obtener su puntuación.
+4. Muestra la hora dentro del videojuego y el dinero restante.
 
 ## 3. Objetos
 Al iniciar el juego se asigna una cantidad aleatoria de dinero al jugador para comprar objetos.
@@ -105,21 +116,21 @@ Todos los objetos se compran en la tienda(Pantalla 2).
 
 ![Imagen de los objetos en la pantalla 2](./images/3.jpg)
 
-| Identificador | Nombre               | Descripción                                                | Precio |
-|---------------|----------------------|------------------------------------------------------------|--------|
-| 0             | Cinturón con bolsa   | Te permite llevar 1 objeto adicional                       |100     |
-| 1             | Mochila grande       | Te permite llevar 3 objetos adicionales                    |250     |
-| 2             | Disolvente y brocha  | Te permite limpiar la pintura de las paredes               |120     |
-| 3             | Linterna             | Te permite ver en las noches                               |80      |
-| 4             | Tienda de campaña    | Te permite dormir por las noches                           |180     |
-| 5             | Resanador de grietas | Te permite restaurar las grietas de la piedra              |80      |
-| 6             | Pintura en aerosol   | Algunas personas lo usan para dañar las pinturas rupestres |80      |
+| Identificador | Nombre               | Descripción                                                                             | Precio |
+|---------------|----------------------|----------------------------------------------------------------------------------------|--------|
+| 0             | Cinturón con bolsa   | Te permite llevar 1 objeto adicional, pero velocidad al escalada se disminuirá un poco |100     |
+| 1             | Mochila grande       | Te permite llevar 3 objetos adicionales, pero disminuirá tu velocidad al escalar       |250     |
+| 2             | Disolvente y brocha  | Te permite limpiar la pintura de las paredes                                           |60      |
+| 3             | Linterna             | Te permite ver en las noches                                                           |100     |
+| 4             | Tienda de campaña    | Te permite dormir por las noches                                                       |140     |
+| 5             | Resanador de grietas | Te permite restaurar las grietas de la piedra                                          |80      |
+| 6             | Pintura en aerosol   | Algunas personas lo usan para dañar las pinturas rupestres                             |150     |
 
 
-## 4. Modificar el juego
+## 4. Modificar el videojuego
 
 ### 4.1. Descargar proyecto
-Para descargar el código fuente  del juego se debe ir al [repositorio del proyecto](https://github.com/M0G1WARA/El-gato-restaurador/).
+Para descargar el código fuente del videojuego se debe ir al [repositorio del proyecto](https://github.com/M0G1WARA/El-gato-restaurador/).
 Dar click en el botón verde "code" y después click al botón "Download ZIP"
 
 ![Imagen de botón "Download ZIP" del proyecto](./images/4.jpg)
@@ -127,6 +138,7 @@ Dar click en el botón verde "code" y después click al botón "Download ZIP"
 Una vez descargado debes descomprimir el archivo, si estas usando windows 11 puedes dar click derecho y "Extraer todo..". 
 
 Si no tienes un programa para descomprimir puedes descargar [7-zip](https://7zip-es.updatestar.com/download.html).
+
 ### 4.2. Descargar Godot
 Para poder abrir el proyecto es necesario Godot.
 
@@ -144,6 +156,8 @@ Alternativas:
 Una vez descargado, abrir Godot dar click en "importar" y seleccionar la carpeta descomprimida del proyecto.
 
 Cuando abra el proyecto puedes abrir la carpeta Scenes/ y buscar los archivos **.tscn** para empezar a modificar las escenas y los archivos **.gd** para modificar el codigo.
+
+![Imagen de botón "Download ZIP" del proyecto](./images/42.jpg)
 
 ### 4.3. Estructura del proyecto
 - **Assets/Images**: Contiene las imágenes utilizadas.
