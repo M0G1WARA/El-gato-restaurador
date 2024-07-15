@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7s7tiov5nd0" path="res://Assets/Images/Map/Store/store_open.png" id="3_mu0dw"]
 [ext_resource type="Texture2D" uid="uid://colrg1jjdp8at" path="res://Assets/Images/Map/Store/store_close.png" id="4_2uuya"]
 [ext_resource type="PackedScene" uid="uid://cljfqf3mvbk8a" path="res://Scenes/Hotbar/hotbar.tscn" id="4_s1lop"]
-[ext_resource type="Texture2D" uid="uid://ct8klu0ljfr8y" path="res://Assets/Images/Map/tent.png" id="6_q833l"]
+[ext_resource type="Texture2D" uid="uid://cf0m4j6wicgyy" path="res://Assets/Images/Map/tent.png" id="6_q833l"]
 [ext_resource type="Texture2D" uid="uid://dtunjo8u6cloy" path="res://Assets/Images/Map/SanFranciscoBackground.jpg" id="6_rgj3f"]
 [ext_resource type="PackedScene" uid="uid://uy3fd4npftj0" path="res://Scenes/HUD/hud.tscn" id="9_o1cha"]
 [ext_resource type="PackedScene" uid="uid://ih2jxnu4p88e" path="res://Scenes/GameOver/game_over.tscn" id="10_tot43"]

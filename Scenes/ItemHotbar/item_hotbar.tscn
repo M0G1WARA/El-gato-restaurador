@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dilkdtuex6opt"]
 
 [ext_resource type="Script" path="res://Scenes/ItemHotbar/item_hotbar.gd" id="1_ixxgn"]
-[ext_resource type="Texture2D" uid="uid://uxpode0janrd" path="res://Assets/Images/Map/Store/inventory_item.png" id="2_1a5r1"]
+[ext_resource type="Texture2D" uid="uid://dro8mx1ua1i30" path="res://Assets/Images/Map/Store/inventory_item.png" id="2_1a5r1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5evuv"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcoedde7t4lno"]
 
 [ext_resource type="Script" path="res://Scenes/Store/store.gd" id="1_plk2y"]
-[ext_resource type="Texture2D" uid="uid://dkpdxedl475ek" path="res://Assets/Images/Map/Store/cat_seller.png" id="2_7comv"]
+[ext_resource type="Texture2D" uid="uid://dau81t2htdspj" path="res://Assets/Images/Map/Store/cat_seller.png" id="2_7comv"]
 
 [node name="Store" type="Control"]
 layout_mode = 3
@@ -53,7 +53,7 @@ theme_override_colors/font_color = Color(1.92523e-07, 0.983666, 5.39064e-06, 1)
 text = "$0"
 
 [node name="FlowContainer" type="FlowContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(640, 0)
+custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 

@@ -28,7 +28,7 @@ func go_to_mountain_range():
 	var tween = get_tree().create_tween()
 	$AnimationPlayer.play("climb")
 	tween.tween_property($ColorRect, "modulate:a",1.0 , 0.5)
-	tween.tween_property($Cat, "position", Vector2(640,900), Global.weight)
+	tween.tween_property($Cat, "position", Vector2(640,1000), Global.weight)
 	tween.tween_property($ColorRect, "modulate:a",0.0 , 0.5)
 
 func check_backpack():
@@ -48,4 +48,4 @@ func check_backpack():
 			pass
 
 func reset_position():
-	$Cat.position = Vector2(640,900)
+	$Cat.position = Vector2(640,1000)
