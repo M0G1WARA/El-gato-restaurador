@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var PaintParticles2D: PackedScene
-var initCount = 0
+var initCount1 = 0
+var initCount2 = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +10,8 @@ func _ready():
 	var pattern = $TileMap.tile_set.get_pattern(randi() % 10)
 	($TileMap as TileMap).set_layer_modulate(0,Color(randf(), randf(), randf(), randf_range(0.5,0.9)))
 	$TileMap.set_pattern(0, Vector2i(1,1), pattern)
-	initCount = $TileMap.get_used_cells(0).size()
+	initCount1 = $TileMap.get_used_cells(0).size()
+	initCount2 = $TileMap.get_used_cells(1).size()
 
 
 func get_tile(mouse_pos):
@@ -53,6 +55,9 @@ func _input(event):
 
 
 func get_score():
-	var tmpCount:float = initCount - $TileMap.get_used_cells(0).size()
+	var tmpCount1:float = initCount1 - $TileMap.get_used_cells(0).size()
+	var tmpCount2:float = initCount2 - $TileMap.get_used_cells(1).size()
+	var initCount = initCount1 + initCount2
+	var tmpCount = tmpCount1 + tmpCount2
 	var porcentaje:float = (tmpCount / initCount)*100 if initCount != 0 else 0.0
 	return porcentaje

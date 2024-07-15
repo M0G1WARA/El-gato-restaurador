@@ -7,7 +7,7 @@ signal removeScene
 
 func _ready():
 	Global.IntensityLevel = 1
-	Global.money = randi() % (1800 - 1200 + 1) + 1200
+	Global.money = randi() % (1600 - 1000 + 1) + 1000
 	$MarginContainer/PanelContainer/TimeContainer/HourLabel.text = str(currentTimeHour)
 	$MarginContainer/PanelContainer/TimeContainer/Label.text = '$ ' + str(Global.money)
 
